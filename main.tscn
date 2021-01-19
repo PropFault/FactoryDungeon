@@ -1,0 +1,980 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://plere.gltf" type="PackedScene" id=1]
+[ext_resource path="res://speen.gd" type="Script" id=2]
+[ext_resource path="res://light.png" type="Texture" id=3]
+[ext_resource path="res://transformLinker.gd" type="Script" id=4]
+[ext_resource path="res://tilemap.png" type="Texture" id=5]
+[ext_resource path="res://viewport.tres" type="Environment" id=6]
+[ext_resource path="res://skeleton_sync.png" type="Texture" id=7]
+[ext_resource path="res://normal.tres" type="Material" id=14]
+
+[sub_resource type="World" id=18]
+environment = ExtResource( 6 )
+
+[sub_resource type="World" id=19]
+environment = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=17]
+script/source = "extends Node
+class_name SkeletonSync, \"res://interface/skeleton_sync.png\"
+export(NodePath) var sourceSkeleton;
+export(NodePath) var targetSkeleton;
+
+var source;
+var target;
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	source = get_node(sourceSkeleton);
+	target = get_node(targetSkeleton);
+
+
+		
+"
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR = texture(TEXTURE, UV);
+	COLOR = floor(COLOR*5.0f)/5.0f;
+}
+
+void light(){
+
+	LIGHT = floor(LIGHT*5.0f)/5.0f;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("vp_n")
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 10.8983
+height = 42.8602
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=16]
+0/name = "auto"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 16, 48, 48 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 2
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 21233840, Vector2( 0, 1 ), 4260278, Vector2( 0, 2 ), 17104946, Vector2( 1, 0 ), 328184, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 20971583, Vector2( 2, 0 ), 21037208, Vector2( 2, 1 ), 17039579, Vector2( 2, 2 ), 4522010 ]
+0/autotile/icon_coordinate = Vector2( 1, 1 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [ Vector2( 1, 1 ), SubResource( 6 ) ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 7 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 64, 64 )
+own_world = true
+world = SubResource( 18 )
+transparent_bg = true
+debug_draw = 1
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="Camera_a" type="Camera" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.175 )
+projection = 1
+current = true
+fov = 40.7
+size = 2.3
+far = 29.2
+
+[node name="player" parent="Viewport" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Skeleton" parent="Viewport/player/metarig" index="0"]
+bones/0/bound_children = [ NodePath("BoneAttachment 58") ]
+bones/1/bound_children = [ NodePath("BoneAttachment 52") ]
+bones/2/bound_children = [ NodePath("BoneAttachment 51") ]
+bones/5/bound_children = [ NodePath("BoneAttachment 2") ]
+bones/6/bound_children = [ NodePath("BoneAttachment") ]
+bones/7/bound_children = [ NodePath("BoneAttachment 3") ]
+bones/8/bound_children = [ NodePath("BoneAttachment 4") ]
+bones/9/bound_children = [ NodePath("BoneAttachment 5") ]
+bones/10/bound_children = [ NodePath("BoneAttachment 27") ]
+bones/11/bound_children = [ NodePath("BoneAttachment 26") ]
+bones/12/bound_children = [ NodePath("BoneAttachment 25") ]
+bones/13/bound_children = [ NodePath("BoneAttachment 9") ]
+bones/14/bound_children = [ NodePath("BoneAttachment 8") ]
+bones/15/bound_children = [ NodePath("BoneAttachment 7") ]
+bones/16/bound_children = [ NodePath("BoneAttachment 6") ]
+bones/17/bound_children = [ NodePath("BoneAttachment 13") ]
+bones/18/bound_children = [ NodePath("BoneAttachment 12") ]
+bones/19/bound_children = [ NodePath("BoneAttachment 11") ]
+bones/20/bound_children = [ NodePath("BoneAttachment 10") ]
+bones/21/bound_children = [ NodePath("BoneAttachment 17") ]
+bones/22/bound_children = [ NodePath("BoneAttachment 16") ]
+bones/23/bound_children = [ NodePath("BoneAttachment 15") ]
+bones/24/bound_children = [ NodePath("BoneAttachment 14") ]
+bones/25/bound_children = [ NodePath("BoneAttachment 21") ]
+bones/26/bound_children = [ NodePath("BoneAttachment 20") ]
+bones/27/bound_children = [ NodePath("BoneAttachment 19") ]
+bones/28/bound_children = [ NodePath("BoneAttachment 18") ]
+bones/29/bound_children = [ NodePath("BoneAttachment 24") ]
+bones/30/bound_children = [ NodePath("BoneAttachment 23") ]
+bones/31/bound_children = [ NodePath("BoneAttachment 22") ]
+bones/32/bound_children = [ NodePath("BoneAttachment 50") ]
+bones/33/bound_children = [ NodePath("BoneAttachment 49") ]
+bones/34/bound_children = [ NodePath("BoneAttachment 48") ]
+bones/35/bound_children = [ NodePath("BoneAttachment 47") ]
+bones/36/bound_children = [ NodePath("BoneAttachment 31") ]
+bones/37/bound_children = [ NodePath("BoneAttachment 30") ]
+bones/38/bound_children = [ NodePath("BoneAttachment 29") ]
+bones/39/bound_children = [ NodePath("BoneAttachment 28") ]
+bones/40/bound_children = [ NodePath("BoneAttachment 35") ]
+bones/41/bound_children = [ NodePath("BoneAttachment 34") ]
+bones/42/bound_children = [ NodePath("BoneAttachment 33") ]
+bones/43/bound_children = [ NodePath("BoneAttachment 32") ]
+bones/44/bound_children = [ NodePath("BoneAttachment 39") ]
+bones/45/bound_children = [ NodePath("BoneAttachment 38") ]
+bones/46/bound_children = [ NodePath("BoneAttachment 37") ]
+bones/47/bound_children = [ NodePath("BoneAttachment 36") ]
+bones/48/bound_children = [ NodePath("BoneAttachment 43") ]
+bones/49/bound_children = [ NodePath("BoneAttachment 42") ]
+bones/50/bound_children = [ NodePath("BoneAttachment 41") ]
+bones/51/bound_children = [ NodePath("BoneAttachment 40") ]
+bones/52/bound_children = [ NodePath("BoneAttachment 46") ]
+bones/53/bound_children = [ NodePath("BoneAttachment 45") ]
+bones/54/bound_children = [ NodePath("BoneAttachment 44") ]
+bones/57/bound_children = [ NodePath("BoneAttachment 54") ]
+bones/58/bound_children = [ NodePath("BoneAttachment 53") ]
+bones/59/bound_children = [ NodePath("BoneAttachment 56"), NodePath("BoneAttachment 57") ]
+bones/60/bound_children = [ NodePath("BoneAttachment 55") ]
+
+[node name="BoneAttachment" parent="Viewport/player/metarig/Skeleton" index="0"]
+transform = Transform( 1, -8.19334e-14, -1.58151e-06, -1.58151e-06, 7.45058e-08, -1, -1.60201e-13, 1, -2.98023e-08, 0.000794406, 1.83489, 0.172712 )
+
+[node name="BoneAttachment 2" parent="Viewport/player/metarig/Skeleton" index="1"]
+transform = Transform( 1, -7.42471e-15, -2.509e-14, 2.69665e-14, 1, 1.93715e-07, -7.42255e-14, -8.9407e-08, 1, -2.23532e-15, 1.7813, 0.0246999 )
+
+[node name="BoneAttachment 3" parent="Viewport/player/metarig/Skeleton" index="2"]
+transform = Transform( -1, 1.60552e-16, 1.50996e-07, 1.50996e-07, -3.53903e-08, 1, 1.20792e-13, 1, 8.56817e-08, 0.1184, 1.4596, -0.0485001 )
+
+[node name="BoneAttachment 4" parent="Viewport/player/metarig/Skeleton" index="3"]
+transform = Transform( -1, 1.60552e-16, 1.50996e-07, 1.50996e-07, -3.53903e-08, 1, 1.20792e-13, 1, 8.56817e-08, -0.1184, 1.4596, -0.0485001 )
+
+[node name="BoneAttachment 5" parent="Viewport/player/metarig/Skeleton" index="4"]
+transform = Transform( 0.326165, 0.88408, -0.334693, 0.861592, -0.423696, -0.279538, -0.388942, -0.197193, -0.899911, 0.215729, 1.59961, -0.0203835 )
+
+[node name="BoneAttachment 6" parent="Viewport/player/metarig/Skeleton" index="5"]
+transform = Transform( -0.977121, 0.165941, -0.133034, -0.16307, -0.986087, -0.0322696, -0.136538, -0.00983749, 0.990586, 0.99536, 1.08513, 0.0605475 )
+
+[node name="BoneAttachment 7" parent="Viewport/player/metarig/Skeleton" index="6"]
+transform = Transform( -0.879098, 0.476501, 0.0115043, -0.475166, -0.878022, 0.057403, 0.0374536, 0.0449964, 0.998285, 0.97694, 1.11907, 0.0588081 )
+
+[node name="BoneAttachment 8" parent="Viewport/player/metarig/Skeleton" index="7"]
+transform = Transform( -0.758988, 0.648519, -0.0579706, -0.648116, -0.743985, 0.162577, 0.0623052, 0.160966, 0.984991, 0.931406, 1.17131, 0.0475063 )
+
+[node name="BoneAttachment 9" parent="Viewport/player/metarig/Skeleton" index="8"]
+transform = Transform( -0.615138, 0.774012, -0.150033, -0.770534, -0.549895, 0.322324, 0.16698, 0.313879, 0.934664, 0.847341, 1.23103, 0.013416 )
+
+[node name="BoneAttachment 10" parent="Viewport/player/metarig/Skeleton" index="9"]
+transform = Transform( -0.929183, 0.24102, -0.280227, -0.226464, -0.970414, -0.083728, -0.292117, -0.0143373, 0.956275, 1.00237, 1.06896, 0.0269472 )
+
+[node name="BoneAttachment 11" parent="Viewport/player/metarig/Skeleton" index="10"]
+transform = Transform( -0.897076, 0.364259, 0.250141, -0.328344, -0.928334, 0.174319, 0.295712, 0.0742447, 0.952387, 0.984289, 1.11505, 0.0232614 )
+
+[node name="BoneAttachment 12" parent="Viewport/player/metarig/Skeleton" index="11"]
+transform = Transform( -0.848436, 0.526965, 0.0496442, -0.505875, -0.834908, 0.21684, 0.155715, 0.158861, 0.974944, 0.947987, 1.17256, 0.0123177 )
+
+[node name="BoneAttachment 13" parent="Viewport/player/metarig/Skeleton" index="12"]
+transform = Transform( -0.640525, 0.766089, -0.0532442, -0.753256, -0.613276, 0.237695, 0.149442, 0.192356, 0.969879, 0.865158, 1.23887, -0.00847973 )
+
+[node name="BoneAttachment 14" parent="Viewport/player/metarig/Skeleton" index="13"]
+transform = Transform( -0.985641, 0.0221701, 0.167396, -0.0119633, -0.998021, 0.0617376, 0.168434, 0.0588484, 0.983955, 0.997433, 1.07223, -0.0164845 )
+
+[node name="BoneAttachment 15" parent="Viewport/player/metarig/Skeleton" index="14"]
+transform = Transform( -0.945135, 0.322664, 0.0510621, -0.319803, -0.94577, 0.0569708, 0.0666754, 0.0375152, 0.997069, 0.982926, 1.11475, -0.0181711 )
+
+[node name="BoneAttachment 16" parent="Viewport/player/metarig/Skeleton" index="15"]
+transform = Transform( -0.877193, 0.480125, -0.00358366, -0.474901, -0.866502, 0.153766, 0.0707216, 0.136584, 0.988101, 0.949892, 1.17437, -0.0275685 )
+
+[node name="BoneAttachment 17" parent="Viewport/player/metarig/Skeleton" index="16"]
+transform = Transform( -0.50427, 0.863546, -0.000538498, -0.839499, -0.490081, 0.234654, 0.202371, 0.118781, 0.972079, 0.863381, 1.22347, -0.0394682 )
+
+[node name="BoneAttachment 18" parent="Viewport/player/metarig/Skeleton" index="17"]
+transform = Transform( -0.998566, 0.026068, -0.0467626, -0.0199321, -0.991679, -0.127183, -0.0496889, -0.126068, 0.990776, 0.977959, 1.08797, -0.0585697 )
+
+[node name="BoneAttachment 19" parent="Viewport/player/metarig/Skeleton" index="18"]
+transform = Transform( -0.986886, 0.129011, -0.0970182, -0.129786, -0.991541, 0.00169554, -0.0959787, 0.0142648, 0.995281, 0.972824, 1.12743, -0.0591374 )
+
+[node name="BoneAttachment 20" parent="Viewport/player/metarig/Skeleton" index="19"]
+transform = Transform( -0.8707, 0.491797, -0.00417795, -0.486911, -0.860792, 0.148174, 0.0692751, 0.131049, 0.988952, 0.950158, 1.16711, -0.0651772 )
+
+[node name="BoneAttachment 21" parent="Viewport/player/metarig/Skeleton" index="20"]
+transform = Transform( -0.61214, 0.790739, 0.00416405, -0.788815, -0.611002, 0.0666951, 0.0552826, 0.0375421, 0.997765, 0.872357, 1.22722, -0.068871 )
+
+[node name="BoneAttachment 22" parent="Viewport/player/metarig/Skeleton" index="21"]
+transform = Transform( -0.721101, 0.692432, -0.0234827, -0.689093, -0.713284, 0.127973, 0.0718624, 0.108463, 0.991499, 0.877032, 1.1141, 0.0590739 )
+
+[node name="BoneAttachment 23" parent="Viewport/player/metarig/Skeleton" index="22"]
+transform = Transform( -0.810919, 0.574127, -0.113086, -0.582784, -0.775008, 0.244389, 0.0526681, 0.264084, 0.96306, 0.845841, 1.15621, 0.0447265 )
+
+[node name="BoneAttachment 24" parent="Viewport/player/metarig/Skeleton" index="23"]
+transform = Transform( -0.846873, 0.509151, -0.153534, -0.528796, -0.775613, 0.344673, 0.0564075, 0.373082, 0.926082, 0.810668, 1.20979, 0.0189535 )
+
+[node name="BoneAttachment 25" parent="Viewport/player/metarig/Skeleton" index="24"]
+transform = Transform( -0.541219, 0.834928, -0.0998871, -0.839587, -0.52997, 0.119274, 0.0466478, 0.148417, 0.987824, 0.805188, 1.27018, -0.026564 )
+
+[node name="BoneAttachment 26" parent="Viewport/player/metarig/Skeleton" index="25"]
+transform = Transform( -0.510939, 0.845079, -0.157424, -0.859614, -0.501865, 0.095888, 0.00202695, 0.184317, 0.982865, 0.524049, 1.43714, -0.0878823 )
+
+[node name="BoneAttachment 27" parent="Viewport/player/metarig/Skeleton" index="26"]
+transform = Transform( -0.474424, 0.856811, 0.201982, -0.880295, -0.461354, -0.110602, -0.00157993, -0.230276, 0.973124, 0.259232, 1.57973, -0.0167104 )
+
+[node name="BoneAttachment 28" parent="Viewport/player/metarig/Skeleton" index="27"]
+transform = Transform( -0.974371, -0.178204, -0.137273, 0.193235, -0.975492, -0.105237, -0.115155, -0.129066, 0.984927, -0.999575, 1.08679, 0.0612234 )
+
+[node name="BoneAttachment 29" parent="Viewport/player/metarig/Skeleton" index="28"]
+transform = Transform( -0.884394, -0.463814, 0.0521859, 0.466664, -0.876672, 0.116925, -0.00848171, 0.127761, 0.991768, -0.982325, 1.1194, 0.0564717 )
+
+[node name="BoneAttachment 30" parent="Viewport/player/metarig/Skeleton" index="29"]
+transform = Transform( -0.752294, -0.65357, 0.083068, 0.657507, -0.736815, 0.157443, -0.0416941, 0.173061, 0.984028, -0.932625, 1.17543, 0.0433114 )
+
+[node name="BoneAttachment 31" parent="Viewport/player/metarig/Skeleton" index="30"]
+transform = Transform( -0.566331, -0.798083, 0.205751, 0.823142, -0.535195, 0.189748, -0.0413179, 0.276822, 0.960032, -0.844174, 1.23474, 0.0126314 )
+
+[node name="BoneAttachment 32" parent="Viewport/player/metarig/Skeleton" index="31"]
+transform = Transform( -0.934964, -0.206075, -0.288749, 0.199265, -0.978505, 0.0531247, -0.29349, -0.00786801, 0.95593, -1.00519, 1.06909, 0.0296782 )
+
+[node name="BoneAttachment 33" parent="Viewport/player/metarig/Skeleton" index="32"]
+transform = Transform( -0.875724, -0.385057, 0.291272, 0.401741, -0.915749, -0.00274969, 0.26779, 0.114608, 0.956636, -0.98505, 1.11699, 0.0236833 )
+
+[node name="BoneAttachment 34" parent="Viewport/player/metarig/Skeleton" index="33"]
+transform = Transform( -0.83038, -0.532326, 0.164614, 0.549157, -0.831875, 0.0800663, 0.0943171, 0.156884, 0.983103, -0.948939, 1.17343, 0.0130407 )
+
+[node name="BoneAttachment 35" parent="Viewport/player/metarig/Skeleton" index="34"]
+transform = Transform( -0.621013, -0.765842, 0.16682, 0.783309, -0.598869, 0.166684, -0.0277505, 0.234184, 0.971796, -0.863335, 1.24037, -0.0131356 )
+
+[node name="BoneAttachment 36" parent="Viewport/player/metarig/Skeleton" index="35"]
+transform = Transform( -0.985627, 0.014151, 0.168344, -0.022528, -0.998595, -0.0479572, 0.167429, -0.0510605, 0.984561, -0.99746, 1.07284, -0.0153454 )
+
+[node name="BoneAttachment 37" parent="Viewport/player/metarig/Skeleton" index="36"]
+transform = Transform( -0.931053, -0.359739, 0.0610627, 0.361964, -0.931708, 0.0300555, 0.0460803, 0.0500855, 0.997681, -0.981781, 1.11344, -0.0175282 )
+
+[node name="BoneAttachment 38" parent="Viewport/player/metarig/Skeleton" index="37"]
+transform = Transform( -0.871997, -0.482446, 0.0828627, 0.489024, -0.866106, 0.103523, 0.0218236, 0.130793, 0.991169, -0.94736, 1.17524, -0.0268599 )
+
+[node name="BoneAttachment 39" parent="Viewport/player/metarig/Skeleton" index="38"]
+transform = Transform( -0.494465, -0.865789, 0.0769022, 0.867219, -0.485437, 0.110828, -0.0586227, 0.121491, 0.99086, -0.860883, 1.22372, -0.0389949 )
+
+[node name="BoneAttachment 40" parent="Viewport/player/metarig/Skeleton" index="39"]
+transform = Transform( -0.999198, -0.0149791, -0.0371396, 0.0195954, -0.991679, -0.127235, -0.0349248, -0.127861, 0.991177, -0.972618, 1.08884, -0.0601892 )
+
+[node name="BoneAttachment 41" parent="Viewport/player/metarig/Skeleton" index="40"]
+transform = Transform( -0.986813, -0.129764, -0.0967537, 0.128852, -0.99154, 0.0156398, -0.0979648, 0.00296649, 0.995185, -0.967454, 1.1283, -0.0603073 )
+
+[node name="BoneAttachment 42" parent="Viewport/player/metarig/Skeleton" index="41"]
+transform = Transform( -0.863025, -0.501347, 0.061956, 0.504742, -0.860792, 0.0653695, 0.0205583, 0.0876871, 0.995936, -0.944348, 1.16797, -0.0643486 )
+
+[node name="BoneAttachment 43" parent="Viewport/player/metarig/Skeleton" index="42"]
+transform = Transform( -0.607135, -0.791002, -0.0755221, 0.790269, -0.611001, 0.0463893, -0.082838, -0.0315184, 0.996064, -0.86652, 1.22809, -0.0612474 )
+
+[node name="BoneAttachment 44" parent="Viewport/player/metarig/Skeleton" index="43"]
+transform = Transform( -0.756616, -0.65054, 0.0658005, 0.651824, -0.742499, 0.154338, -0.051546, 0.159665, 0.985824, -0.880043, 1.1178, 0.0569178 )
+
+[node name="BoneAttachment 45" parent="Viewport/player/metarig/Skeleton" index="44"]
+transform = Transform( -0.784854, -0.611543, 0.100091, 0.619157, -0.767262, 0.167191, -0.0254489, 0.193193, 0.98083, -0.848383, 1.15752, 0.0469162 )
+
+[node name="BoneAttachment 46" parent="Viewport/player/metarig/Skeleton" index="45"]
+transform = Transform( -0.825739, -0.527404, 0.200002, 0.563971, -0.778026, 0.276791, 0.00962631, 0.341352, 0.939886, -0.810499, 1.21341, 0.0223966 )
+
+[node name="BoneAttachment 47" parent="Viewport/player/metarig/Skeleton" index="46"]
+transform = Transform( -0.531704, -0.831077, 0.163102, 0.844985, -0.533599, 0.0356819, 0.0573769, 0.156791, 0.985964, -0.784574, 1.28374, -0.0441987 )
+
+[node name="BoneAttachment 48" parent="Viewport/player/metarig/Skeleton" index="47"]
+transform = Transform( -0.504456, -0.8485, 0.159913, 0.863307, -0.498876, 0.0763205, 0.0150188, 0.176554, 0.984176, -0.528244, 1.43445, -0.0975352 )
+
+[node name="BoneAttachment 49" parent="Viewport/player/metarig/Skeleton" index="48"]
+transform = Transform( -0.475577, -0.850662, -0.224056, 0.879672, -0.459405, -0.122977, 0.00167881, -0.255581, 0.966786, -0.259232, 1.57973, -0.0167104 )
+
+[node name="BoneAttachment 50" parent="Viewport/player/metarig/Skeleton" index="49"]
+transform = Transform( 0.463698, -0.841492, -0.277265, -0.00558628, -0.315713, 0.948838, -0.885976, -0.438425, -0.151096, -0.207181, 1.60945, 0.00516452 )
+
+[node name="BoneAttachment 51" parent="Viewport/player/metarig/Skeleton" index="50"]
+transform = Transform( 1, -7.10543e-15, 0, 2.66454e-14, 0.999745, 0.0225956, -9.9476e-14, -0.0225956, 0.999745, 2.64483e-15, 1.1715, -0.00040004 )
+
+[node name="BoneAttachment 52" parent="Viewport/player/metarig/Skeleton" index="51"]
+transform = Transform( 1, -3.55271e-15, 2.38419e-07, 2.93145e-08, 0.992412, -0.122954, -2.3661e-07, 0.122954, 0.992412, 2.64482e-15, 1.0359, -0.0172 )
+
+[node name="BoneAttachment 53" parent="Viewport/player/metarig/Skeleton" index="52"]
+transform = Transform( 1, 3.71148e-12, -1.02318e-12, 3.81306e-12, -0.995124, 0.0986321, -7.363e-13, -0.0986314, -0.995121, 0.098, 0.415802, 0.0286002 )
+
+[node name="BoneAttachment 54" parent="Viewport/player/metarig/Skeleton" index="53"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, 0.098, 0.950602, -0.0124 )
+
+[node name="BoneAttachment 55" parent="Viewport/player/metarig/Skeleton" index="54"]
+transform = Transform( 1, 3.71148e-12, -1.02318e-12, 3.81306e-12, -0.995124, 0.0986321, -7.363e-13, -0.0986314, -0.995121, -0.098, 0.415802, 0.0286002 )
+
+[node name="BoneAttachment 56" parent="Viewport/player/metarig/Skeleton" index="55"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, -0.098, 0.950602, -0.0124 )
+
+[node name="BoneAttachment 57" parent="Viewport/player/metarig/Skeleton" index="56"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, -0.098, 0.950602, -0.0124 )
+
+[node name="BoneAttachment 58" parent="Viewport/player/metarig/Skeleton" index="57"]
+transform = Transform( 1, -8.88178e-15, 2.38418e-07, 5.95187e-08, 0.968339, -0.249639, -2.3087e-07, 0.249639, 0.968339, 0, 0.888502, -0.0552 )
+
+[node name="vp_n" type="Viewport" parent="."]
+size = Vector2( 64, 64 )
+own_world = true
+world = SubResource( 19 )
+transparent_bg = true
+debug_draw = 1
+render_target_update_mode = 3
+gui_disable_input = true
+script = SubResource( 17 )
+
+[node name="Camera_b" type="Camera" parent="vp_n"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.175 )
+projection = 1
+current = true
+fov = 40.7
+size = 2.3
+far = 29.2
+
+[node name="player_n" parent="vp_n" instance=ExtResource( 1 )]
+
+[node name="Skeleton" parent="vp_n/player_n/metarig" index="0"]
+bones/0/bound_children = [ NodePath("BoneAttachment 58") ]
+bones/1/bound_children = [ NodePath("BoneAttachment 52") ]
+bones/2/bound_children = [ NodePath("BoneAttachment 51") ]
+bones/5/bound_children = [ NodePath("BoneAttachment 2") ]
+bones/6/bound_children = [ NodePath("BoneAttachment") ]
+bones/7/bound_children = [ NodePath("BoneAttachment 3") ]
+bones/8/bound_children = [ NodePath("BoneAttachment 4") ]
+bones/9/bound_children = [ NodePath("BoneAttachment 5") ]
+bones/10/bound_children = [ NodePath("BoneAttachment 27") ]
+bones/11/bound_children = [ NodePath("BoneAttachment 26") ]
+bones/12/bound_children = [ NodePath("BoneAttachment 25") ]
+bones/13/bound_children = [ NodePath("BoneAttachment 9") ]
+bones/14/bound_children = [ NodePath("BoneAttachment 8") ]
+bones/15/bound_children = [ NodePath("BoneAttachment 7") ]
+bones/16/bound_children = [ NodePath("BoneAttachment 6") ]
+bones/17/bound_children = [ NodePath("BoneAttachment 13") ]
+bones/18/bound_children = [ NodePath("BoneAttachment 12") ]
+bones/19/bound_children = [ NodePath("BoneAttachment 11") ]
+bones/20/bound_children = [ NodePath("BoneAttachment 10") ]
+bones/21/bound_children = [ NodePath("BoneAttachment 17") ]
+bones/22/bound_children = [ NodePath("BoneAttachment 16") ]
+bones/23/bound_children = [ NodePath("BoneAttachment 15") ]
+bones/24/bound_children = [ NodePath("BoneAttachment 14") ]
+bones/25/bound_children = [ NodePath("BoneAttachment 21") ]
+bones/26/bound_children = [ NodePath("BoneAttachment 20") ]
+bones/27/bound_children = [ NodePath("BoneAttachment 19") ]
+bones/28/bound_children = [ NodePath("BoneAttachment 18") ]
+bones/29/bound_children = [ NodePath("BoneAttachment 24") ]
+bones/30/bound_children = [ NodePath("BoneAttachment 23") ]
+bones/31/bound_children = [ NodePath("BoneAttachment 22") ]
+bones/32/bound_children = [ NodePath("BoneAttachment 50") ]
+bones/33/bound_children = [ NodePath("BoneAttachment 49") ]
+bones/34/bound_children = [ NodePath("BoneAttachment 48") ]
+bones/35/bound_children = [ NodePath("BoneAttachment 47") ]
+bones/36/bound_children = [ NodePath("BoneAttachment 31") ]
+bones/37/bound_children = [ NodePath("BoneAttachment 30") ]
+bones/38/bound_children = [ NodePath("BoneAttachment 29") ]
+bones/39/bound_children = [ NodePath("BoneAttachment 28") ]
+bones/40/bound_children = [ NodePath("BoneAttachment 35") ]
+bones/41/bound_children = [ NodePath("BoneAttachment 34") ]
+bones/42/bound_children = [ NodePath("BoneAttachment 33") ]
+bones/43/bound_children = [ NodePath("BoneAttachment 32") ]
+bones/44/bound_children = [ NodePath("BoneAttachment 39") ]
+bones/45/bound_children = [ NodePath("BoneAttachment 38") ]
+bones/46/bound_children = [ NodePath("BoneAttachment 37") ]
+bones/47/bound_children = [ NodePath("BoneAttachment 36") ]
+bones/48/bound_children = [ NodePath("BoneAttachment 43") ]
+bones/49/bound_children = [ NodePath("BoneAttachment 42") ]
+bones/50/bound_children = [ NodePath("BoneAttachment 41") ]
+bones/51/bound_children = [ NodePath("BoneAttachment 40") ]
+bones/52/bound_children = [ NodePath("BoneAttachment 46") ]
+bones/53/bound_children = [ NodePath("BoneAttachment 45") ]
+bones/54/bound_children = [ NodePath("BoneAttachment 44") ]
+bones/57/bound_children = [ NodePath("BoneAttachment 54") ]
+bones/58/bound_children = [ NodePath("BoneAttachment 53") ]
+bones/59/bound_children = [ NodePath("BoneAttachment 56"), NodePath("BoneAttachment 57") ]
+bones/60/bound_children = [ NodePath("BoneAttachment 55") ]
+
+[node name="BoneAttachment" parent="vp_n/player_n/metarig/Skeleton" index="0"]
+transform = Transform( 1, -8.19334e-14, -1.58151e-06, -1.58151e-06, 7.45058e-08, -1, -1.60201e-13, 1, -2.98023e-08, 0.000794406, 1.83489, 0.172712 )
+
+[node name="stogie" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment" index="0"]
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+
+[node name="BoneAttachment 2" parent="vp_n/player_n/metarig/Skeleton" index="1"]
+transform = Transform( 1, -7.42471e-15, -2.509e-14, 2.69665e-14, 1, 1.93715e-07, -7.42255e-14, -8.9407e-08, 1, -2.23532e-15, 1.7813, 0.0246999 )
+
+[node name="Cylinder" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 2" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="Cylinder001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 2/Cylinder" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 3" parent="vp_n/player_n/metarig/Skeleton" index="2"]
+transform = Transform( -1, 1.60552e-16, 1.50996e-07, 1.50996e-07, -3.53903e-08, 1, 1.20792e-13, 1, 8.56817e-08, 0.1184, 1.4596, -0.0485001 )
+
+[node name="Cylinder006" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 3" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 4" parent="vp_n/player_n/metarig/Skeleton" index="3"]
+transform = Transform( -1, 1.60552e-16, 1.50996e-07, 1.50996e-07, -3.53903e-08, 1, 1.20792e-13, 1, 8.56817e-08, -0.1184, 1.4596, -0.0485001 )
+
+[node name="Cylinder003" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 4" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 5" parent="vp_n/player_n/metarig/Skeleton" index="4"]
+transform = Transform( 0.326165, 0.88408, -0.334693, 0.861592, -0.423696, -0.279538, -0.388942, -0.197193, -0.899911, 0.215729, 1.59961, -0.0203835 )
+
+[node name="Cube002" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 5" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 6" parent="vp_n/player_n/metarig/Skeleton" index="5"]
+transform = Transform( -0.977121, 0.165941, -0.133034, -0.16307, -0.986087, -0.0322696, -0.136538, -0.00983749, 0.990586, 0.99536, 1.08513, 0.0605475 )
+
+[node name="finger_r_index_4001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 6" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 7" parent="vp_n/player_n/metarig/Skeleton" index="6"]
+transform = Transform( -0.879098, 0.476501, 0.0115043, -0.475166, -0.878022, 0.057403, 0.0374536, 0.0449964, 0.998285, 0.97694, 1.11907, 0.0588081 )
+
+[node name="finger_r_index_3001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 7" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 8" parent="vp_n/player_n/metarig/Skeleton" index="7"]
+transform = Transform( -0.758988, 0.648519, -0.0579706, -0.648116, -0.743985, 0.162577, 0.0623052, 0.160966, 0.984991, 0.931406, 1.17131, 0.0475063 )
+
+[node name="finger_r_index_2001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 8" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 9" parent="vp_n/player_n/metarig/Skeleton" index="8"]
+transform = Transform( -0.615138, 0.774012, -0.150033, -0.770534, -0.549895, 0.322324, 0.16698, 0.313879, 0.934664, 0.847341, 1.23103, 0.013416 )
+
+[node name="finger_r_index_1001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 9" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 10" parent="vp_n/player_n/metarig/Skeleton" index="9"]
+transform = Transform( -0.929183, 0.24102, -0.280227, -0.226464, -0.970414, -0.083728, -0.292117, -0.0143373, 0.956275, 1.00237, 1.06896, 0.0269472 )
+
+[node name="finger_r_middle_4001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 10" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 11" parent="vp_n/player_n/metarig/Skeleton" index="10"]
+transform = Transform( -0.897076, 0.364259, 0.250141, -0.328344, -0.928334, 0.174319, 0.295712, 0.0742447, 0.952387, 0.984289, 1.11505, 0.0232614 )
+
+[node name="finger_r_middle_3001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 11" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 12" parent="vp_n/player_n/metarig/Skeleton" index="11"]
+transform = Transform( -0.848436, 0.526965, 0.0496442, -0.505875, -0.834908, 0.21684, 0.155715, 0.158861, 0.974944, 0.947987, 1.17256, 0.0123177 )
+
+[node name="finger_r_middle_2001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 12" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 13" parent="vp_n/player_n/metarig/Skeleton" index="12"]
+transform = Transform( -0.640525, 0.766089, -0.0532442, -0.753256, -0.613276, 0.237695, 0.149442, 0.192356, 0.969879, 0.865158, 1.23887, -0.00847973 )
+
+[node name="finger_r_middle_1001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 13" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 14" parent="vp_n/player_n/metarig/Skeleton" index="13"]
+transform = Transform( -0.985641, 0.0221701, 0.167396, -0.0119633, -0.998021, 0.0617376, 0.168434, 0.0588484, 0.983955, 0.997433, 1.07223, -0.0164845 )
+
+[node name="finger_r_ring_4001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 14" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 15" parent="vp_n/player_n/metarig/Skeleton" index="14"]
+transform = Transform( -0.945135, 0.322664, 0.0510621, -0.319803, -0.94577, 0.0569708, 0.0666754, 0.0375152, 0.997069, 0.982926, 1.11475, -0.0181711 )
+
+[node name="finger_r_ring_3001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 15" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 16" parent="vp_n/player_n/metarig/Skeleton" index="15"]
+transform = Transform( -0.877193, 0.480125, -0.00358366, -0.474901, -0.866502, 0.153766, 0.0707216, 0.136584, 0.988101, 0.949892, 1.17437, -0.0275685 )
+
+[node name="finger_r_ring_2001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 16" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 17" parent="vp_n/player_n/metarig/Skeleton" index="16"]
+transform = Transform( -0.50427, 0.863546, -0.000538498, -0.839499, -0.490081, 0.234654, 0.202371, 0.118781, 0.972079, 0.863381, 1.22347, -0.0394682 )
+
+[node name="finger_r_ring_1001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 17" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 18" parent="vp_n/player_n/metarig/Skeleton" index="17"]
+transform = Transform( -0.998566, 0.026068, -0.0467626, -0.0199321, -0.991679, -0.127183, -0.0496889, -0.126068, 0.990776, 0.977959, 1.08797, -0.0585697 )
+
+[node name="finger_r_pinky_4001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 18" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 19" parent="vp_n/player_n/metarig/Skeleton" index="18"]
+transform = Transform( -0.986886, 0.129011, -0.0970182, -0.129786, -0.991541, 0.00169554, -0.0959787, 0.0142648, 0.995281, 0.972824, 1.12743, -0.0591374 )
+
+[node name="finger_r_pinky_3001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 19" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 20" parent="vp_n/player_n/metarig/Skeleton" index="19"]
+transform = Transform( -0.8707, 0.491797, -0.00417795, -0.486911, -0.860792, 0.148174, 0.0692751, 0.131049, 0.988952, 0.950158, 1.16711, -0.0651772 )
+
+[node name="finger_r_pinky_2001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 20" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 21" parent="vp_n/player_n/metarig/Skeleton" index="20"]
+transform = Transform( -0.61214, 0.790739, 0.00416405, -0.788815, -0.611002, 0.0666951, 0.0552826, 0.0375421, 0.997765, 0.872357, 1.22722, -0.068871 )
+
+[node name="finger_r_pinky_1001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 21" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 22" parent="vp_n/player_n/metarig/Skeleton" index="21"]
+transform = Transform( -0.721101, 0.692432, -0.0234827, -0.689093, -0.713284, 0.127973, 0.0718624, 0.108463, 0.991499, 0.877032, 1.1141, 0.0590739 )
+
+[node name="finger_r_thumb_3001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 22" index="0"]
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+
+[node name="BoneAttachment 23" parent="vp_n/player_n/metarig/Skeleton" index="22"]
+transform = Transform( -0.810919, 0.574127, -0.113086, -0.582784, -0.775008, 0.244389, 0.0526681, 0.264084, 0.96306, 0.845841, 1.15621, 0.0447265 )
+
+[node name="finger_r_thumb_2001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 23" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 24" parent="vp_n/player_n/metarig/Skeleton" index="23"]
+transform = Transform( -0.846873, 0.509151, -0.153534, -0.528796, -0.775613, 0.344673, 0.0564075, 0.373082, 0.926082, 0.810668, 1.20979, 0.0189535 )
+
+[node name="finger_r_thumb_1001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 24" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 25" parent="vp_n/player_n/metarig/Skeleton" index="24"]
+transform = Transform( -0.541219, 0.834928, -0.0998871, -0.839587, -0.52997, 0.119274, 0.0466478, 0.148417, 0.987824, 0.805188, 1.27018, -0.026564 )
+
+[node name="Arm_r_hand001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 25" index="0"]
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+material/2 = ExtResource( 14 )
+
+[node name="BoneAttachment 26" parent="vp_n/player_n/metarig/Skeleton" index="25"]
+transform = Transform( -0.510939, 0.845079, -0.157424, -0.859614, -0.501865, 0.095888, 0.00202695, 0.184317, 0.982865, 0.524049, 1.43714, -0.0878823 )
+
+[node name="Cube006" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 26" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 27" parent="vp_n/player_n/metarig/Skeleton" index="26"]
+transform = Transform( -0.474424, 0.856811, 0.201982, -0.880295, -0.461354, -0.110602, -0.00157993, -0.230276, 0.973124, 0.259232, 1.57973, -0.0167104 )
+
+[node name="Cube005" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 27" index="0"]
+transform = Transform( -0.473077, -0.88102, -0.0012976, 0.857325, -0.460013, -0.231044, 0.202957, -0.110414, 0.972943, 1.51359, 0.502854, 0.138622 )
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 28" parent="vp_n/player_n/metarig/Skeleton" index="27"]
+transform = Transform( -0.974371, -0.178204, -0.137273, 0.193235, -0.975492, -0.105237, -0.115155, -0.129066, 0.984927, -0.999575, 1.08679, 0.0612234 )
+
+[node name="finger_r_index_4" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 28" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 29" parent="vp_n/player_n/metarig/Skeleton" index="28"]
+transform = Transform( -0.884394, -0.463814, 0.0521859, 0.466664, -0.876672, 0.116925, -0.00848171, 0.127761, 0.991768, -0.982325, 1.1194, 0.0564717 )
+
+[node name="finger_r_index_3" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 29" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 30" parent="vp_n/player_n/metarig/Skeleton" index="29"]
+transform = Transform( -0.752294, -0.65357, 0.083068, 0.657507, -0.736815, 0.157443, -0.0416941, 0.173061, 0.984028, -0.932625, 1.17543, 0.0433114 )
+
+[node name="finger_r_index_2" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 30" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 31" parent="vp_n/player_n/metarig/Skeleton" index="30"]
+transform = Transform( -0.566331, -0.798083, 0.205751, 0.823142, -0.535195, 0.189748, -0.0413179, 0.276822, 0.960032, -0.844174, 1.23474, 0.0126314 )
+
+[node name="finger_r_index_1" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 31" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 32" parent="vp_n/player_n/metarig/Skeleton" index="31"]
+transform = Transform( -0.934964, -0.206075, -0.288749, 0.199265, -0.978505, 0.0531247, -0.29349, -0.00786801, 0.95593, -1.00519, 1.06909, 0.0296782 )
+
+[node name="finger_r_middle_4" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 32" index="0"]
+transform = Transform( -0.934964, 0.199265, -0.29349, -0.206075, -0.978505, -0.00786766, -0.288749, 0.0531249, 0.95593, -1.14414, 0.839203, -0.375415 )
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 33" parent="vp_n/player_n/metarig/Skeleton" index="32"]
+transform = Transform( -0.875724, -0.385057, 0.291272, 0.401741, -0.915749, -0.00274969, 0.26779, 0.114608, 0.956636, -0.98505, 1.11699, 0.0236833 )
+
+[node name="finger_r_middle_3" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 33" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 34" parent="vp_n/player_n/metarig/Skeleton" index="33"]
+transform = Transform( -0.83038, -0.532326, 0.164614, 0.549157, -0.831875, 0.0800663, 0.0943171, 0.156884, 0.983103, -0.948939, 1.17343, 0.0130407 )
+
+[node name="finger_r_middle_2" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 34" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 35" parent="vp_n/player_n/metarig/Skeleton" index="34"]
+transform = Transform( -0.621013, -0.765842, 0.16682, 0.783309, -0.598869, 0.166684, -0.0277505, 0.234184, 0.971796, -0.863335, 1.24037, -0.0131356 )
+
+[node name="finger_r_middle_1" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 35" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 36" parent="vp_n/player_n/metarig/Skeleton" index="35"]
+transform = Transform( -0.985627, 0.014151, 0.168344, -0.022528, -0.998595, -0.0479572, 0.167429, -0.0510605, 0.984561, -0.99746, 1.07284, -0.0153454 )
+
+[node name="finger_r_ring_4" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 36" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 37" parent="vp_n/player_n/metarig/Skeleton" index="36"]
+transform = Transform( -0.931053, -0.359739, 0.0610627, 0.361964, -0.931708, 0.0300555, 0.0460803, 0.0500855, 0.997681, -0.981781, 1.11344, -0.0175282 )
+
+[node name="finger_r_ring_3" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 37" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 38" parent="vp_n/player_n/metarig/Skeleton" index="37"]
+transform = Transform( -0.871997, -0.482446, 0.0828627, 0.489024, -0.866106, 0.103523, 0.0218236, 0.130793, 0.991169, -0.94736, 1.17524, -0.0268599 )
+
+[node name="finger_r_ring_2" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 38" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 39" parent="vp_n/player_n/metarig/Skeleton" index="38"]
+transform = Transform( -0.494465, -0.865789, 0.0769022, 0.867219, -0.485437, 0.110828, -0.0586227, 0.121491, 0.99086, -0.860883, 1.22372, -0.0389949 )
+
+[node name="finger_r_ring_1" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 39" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 40" parent="vp_n/player_n/metarig/Skeleton" index="39"]
+transform = Transform( -0.999198, -0.0149791, -0.0371396, 0.0195954, -0.991679, -0.127235, -0.0349248, -0.127861, 0.991177, -0.972618, 1.08884, -0.0601892 )
+
+[node name="finger_r_pinky_4" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 40" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 41" parent="vp_n/player_n/metarig/Skeleton" index="40"]
+transform = Transform( -0.986813, -0.129764, -0.0967537, 0.128852, -0.99154, 0.0156398, -0.0979648, 0.00296649, 0.995185, -0.967454, 1.1283, -0.0603073 )
+
+[node name="finger_r_pinky_3" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 41" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 42" parent="vp_n/player_n/metarig/Skeleton" index="41"]
+transform = Transform( -0.863025, -0.501347, 0.061956, 0.504742, -0.860792, 0.0653695, 0.0205583, 0.0876871, 0.995936, -0.944348, 1.16797, -0.0643486 )
+
+[node name="finger_r_pinky_2" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 42" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 43" parent="vp_n/player_n/metarig/Skeleton" index="42"]
+transform = Transform( -0.607135, -0.791002, -0.0755221, 0.790269, -0.611001, 0.0463893, -0.082838, -0.0315184, 0.996064, -0.86652, 1.22809, -0.0612474 )
+
+[node name="finger_r_pinky_1" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 43" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 44" parent="vp_n/player_n/metarig/Skeleton" index="43"]
+transform = Transform( -0.756616, -0.65054, 0.0658005, 0.651824, -0.742499, 0.154338, -0.051546, 0.159665, 0.985824, -0.880043, 1.1178, 0.0569178 )
+
+[node name="finger_r_thumb_3" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 44" index="0"]
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+
+[node name="BoneAttachment 45" parent="vp_n/player_n/metarig/Skeleton" index="44"]
+transform = Transform( -0.784854, -0.611543, 0.100091, 0.619157, -0.767262, 0.167191, -0.0254489, 0.193193, 0.98083, -0.848383, 1.15752, 0.0469162 )
+
+[node name="finger_r_thumb_2" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 45" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 46" parent="vp_n/player_n/metarig/Skeleton" index="45"]
+transform = Transform( -0.825739, -0.527404, 0.200002, 0.563971, -0.778026, 0.276791, 0.00962631, 0.341352, 0.939886, -0.810499, 1.21341, 0.0223966 )
+
+[node name="finger_r_thumb_1" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 46" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 47" parent="vp_n/player_n/metarig/Skeleton" index="46"]
+transform = Transform( -0.531704, -0.831077, 0.163102, 0.844985, -0.533599, 0.0356819, 0.0573769, 0.156791, 0.985964, -0.784574, 1.28374, -0.0441987 )
+
+[node name="Arm_r_hand" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 47" index="0"]
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+material/2 = ExtResource( 14 )
+
+[node name="BoneAttachment 48" parent="vp_n/player_n/metarig/Skeleton" index="47"]
+transform = Transform( -0.504456, -0.8485, 0.159913, 0.863307, -0.498876, 0.0763205, 0.0150188, 0.176554, 0.984176, -0.528244, 1.43445, -0.0975352 )
+
+[node name="Cube004" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 48" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 49" parent="vp_n/player_n/metarig/Skeleton" index="48"]
+transform = Transform( -0.475577, -0.850662, -0.224056, 0.879672, -0.459405, -0.122977, 0.00167881, -0.255581, 0.966786, -0.259232, 1.57973, -0.0167104 )
+
+[node name="Cube003" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 49" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 50" parent="vp_n/player_n/metarig/Skeleton" index="49"]
+transform = Transform( 0.463698, -0.841492, -0.277265, -0.00558628, -0.315713, 0.948838, -0.885976, -0.438425, -0.151096, -0.207181, 1.60945, 0.00516452 )
+
+[node name="Cube007" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 50" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 51" parent="vp_n/player_n/metarig/Skeleton" index="50"]
+transform = Transform( 1, -7.10543e-15, 0, 2.66454e-14, 0.999745, 0.0225956, -9.9476e-14, -0.0225956, 0.999745, 2.64483e-15, 1.1715, -0.00040004 )
+
+[node name="Cube" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 51" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74549e-14, -1.17121, -0.0260708 )
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 14 )
+
+[node name="BoneAttachment 52" parent="vp_n/player_n/metarig/Skeleton" index="51"]
+transform = Transform( 1, -3.55271e-15, 2.38419e-07, 2.93145e-08, 0.992412, -0.122954, -2.3661e-07, 0.122954, 0.992412, 2.64482e-15, 1.0359, -0.0172 )
+
+[node name="Cylinder004" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 52" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 53" parent="vp_n/player_n/metarig/Skeleton" index="52"]
+transform = Transform( 1, 3.71148e-12, -1.02318e-12, 3.81306e-12, -0.995124, 0.0986321, -7.363e-13, -0.0986314, -0.995121, 0.098, 0.415802, 0.0286002 )
+
+[node name="Cylinder011" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 53" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 54" parent="vp_n/player_n/metarig/Skeleton" index="53"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, 0.098, 0.950602, -0.0124 )
+
+[node name="Cylinder009" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 54" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 55" parent="vp_n/player_n/metarig/Skeleton" index="54"]
+transform = Transform( 1, 3.71148e-12, -1.02318e-12, 3.81306e-12, -0.995124, 0.0986321, -7.363e-13, -0.0986314, -0.995121, -0.098, 0.415802, 0.0286002 )
+
+[node name="Cylinder010" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 55" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 56" parent="vp_n/player_n/metarig/Skeleton" index="55"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, -0.098, 0.950602, -0.0124 )
+
+[node name="BoneAttachment 57" parent="vp_n/player_n/metarig/Skeleton" index="56"]
+transform = Transform( 1, 7.54218e-09, -8.13873e-09, 6.89801e-09, -0.997074, -0.0764401, -8.6915e-09, 0.0764403, -0.997071, -0.098, 0.950602, -0.0124 )
+
+[node name="Cylinder008" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 57" index="0"]
+transform = Transform( 1, 7.49951e-09, -5.78956e-10, 7.52182e-09, -0.997074, 0.0764413, -3.98881e-12, -0.076441, -0.997077, 0.098, 0.948768, 0.0603003 )
+material/0 = ExtResource( 14 )
+
+[node name="BoneAttachment 58" parent="vp_n/player_n/metarig/Skeleton" index="57"]
+transform = Transform( 1, -8.88178e-15, 2.38418e-07, 5.95187e-08, 0.968339, -0.249639, -2.3087e-07, 0.249639, 0.968339, 0, 0.888502, -0.0552 )
+
+[node name="Cube001" parent="vp_n/player_n/metarig/Skeleton/BoneAttachment 58" index="0"]
+material/0 = ExtResource( 14 )
+
+[node name="Cylinder002" parent="vp_n/player_n/metarig/Skeleton" index="58"]
+material/0 = ExtResource( 14 )
+
+[node name="TransformLinker" type="Node" parent="vp_n/player_n"]
+script = ExtResource( 4 )
+linkingPaths = {
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 30"): NodePath("../metarig/Skeleton/BoneAttachment 30"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 31"): NodePath("../metarig/Skeleton/BoneAttachment 31"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 32"): NodePath("../metarig/Skeleton/BoneAttachment 32"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 33"): NodePath("../metarig/Skeleton/BoneAttachment 33"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 34"): NodePath("../metarig/Skeleton/BoneAttachment 34"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 35"): NodePath("../metarig/Skeleton/BoneAttachment 35"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 36"): NodePath("../metarig/Skeleton/BoneAttachment 36"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 37"): NodePath("../metarig/Skeleton/BoneAttachment 37"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 38"): NodePath("../metarig/Skeleton/BoneAttachment 38"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 39"): NodePath("../metarig/Skeleton/BoneAttachment 39"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 40"): NodePath("../metarig/Skeleton/BoneAttachment 40"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 41"): NodePath("../metarig/Skeleton/BoneAttachment 41"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 42"): NodePath("../metarig/Skeleton/BoneAttachment 42"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 43"): NodePath("../metarig/Skeleton/BoneAttachment 43"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 44"): NodePath("../metarig/Skeleton/BoneAttachment 44"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 45"): NodePath("../metarig/Skeleton/BoneAttachment 45"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 46"): NodePath("../metarig/Skeleton/BoneAttachment 46"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 47"): NodePath("../metarig/Skeleton/BoneAttachment 47"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 48"): NodePath("../metarig/Skeleton/BoneAttachment 48"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 49"): NodePath("../metarig/Skeleton/BoneAttachment 49"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 50"): NodePath("../metarig/Skeleton/BoneAttachment 50"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 51"): NodePath("../metarig/Skeleton/BoneAttachment 51"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 52"): NodePath("../metarig/Skeleton/BoneAttachment 52"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 53"): NodePath("../metarig/Skeleton/BoneAttachment 53"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 54"): NodePath("../metarig/Skeleton/BoneAttachment 54"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 55"): NodePath("../metarig/Skeleton/BoneAttachment 55"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 56"): NodePath("../metarig/Skeleton/BoneAttachment 56"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 57"): NodePath("../metarig/Skeleton/BoneAttachment 57"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment"): NodePath("../metarig/Skeleton/BoneAttachment"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 2"): NodePath("../metarig/Skeleton/BoneAttachment 2"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 3"): NodePath("../metarig/Skeleton/BoneAttachment 3"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 4"): NodePath("../metarig/Skeleton/BoneAttachment 4"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 5"): NodePath("../metarig/Skeleton/BoneAttachment 5"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 6"): NodePath("../metarig/Skeleton/BoneAttachment 6"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 7"): NodePath("../metarig/Skeleton/BoneAttachment 7"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 8"): NodePath("../metarig/Skeleton/BoneAttachment 8"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 9"): NodePath("../metarig/Skeleton/BoneAttachment 9"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 10"): NodePath("../metarig/Skeleton/BoneAttachment 10"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 11"): NodePath("../metarig/Skeleton/BoneAttachment 11"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 12"): NodePath("../metarig/Skeleton/BoneAttachment 12"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 13"): NodePath("../metarig/Skeleton/BoneAttachment 13"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 14"): NodePath("../metarig/Skeleton/BoneAttachment 14"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 15"): NodePath("../metarig/Skeleton/BoneAttachment 15"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 16"): NodePath("../metarig/Skeleton/BoneAttachment 16"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 17"): NodePath("../metarig/Skeleton/BoneAttachment 17"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 18"): NodePath("../metarig/Skeleton/BoneAttachment 18"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 19"): NodePath("../metarig/Skeleton/BoneAttachment 19"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 20"): NodePath("../metarig/Skeleton/BoneAttachment 20"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 21"): NodePath("../metarig/Skeleton/BoneAttachment 21"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 22"): NodePath("../metarig/Skeleton/BoneAttachment 22"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 23"): NodePath("../metarig/Skeleton/BoneAttachment 23"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 24"): NodePath("../metarig/Skeleton/BoneAttachment 24"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 25"): NodePath("../metarig/Skeleton/BoneAttachment 25"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 26"): NodePath("../metarig/Skeleton/BoneAttachment 26"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 27"): NodePath("../metarig/Skeleton/BoneAttachment 27"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 28"): NodePath("../metarig/Skeleton/BoneAttachment 28"),
+NodePath("../../../Viewport/player/metarig/Skeleton/BoneAttachment 29"): NodePath("../metarig/Skeleton/BoneAttachment 29")
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 208.082, 159.176 )
+texture = ExtResource( 3 )
+energy = 1.16
+range_height = 209.0
+
+[node name="PL" type="KinematicBody2D" parent="."]
+position = Vector2( 84.2406, 185.865 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="PL"]
+material = SubResource( 2 )
+texture = SubResource( 3 )
+normal_map = SubResource( 4 )
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PL"]
+shape = SubResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="PL"]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 16 )
+cell_size = Vector2( 16, 16 )
+compatibility_mode = true
+format = 1
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 1, 65546, 0, 1, 65547, 0, 1, 65548, 0, 1, 65549, 0, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65553, 0, 1, 65554, 0, 1, 65555, 0, 1, 65556, 0, 1, 65557, 0, 1, 65558, 0, 1, 65559, 0, 1, 65560, 0, 1, 65561, 0, 1, 65562, 0, 2, 131072, 0, 0, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 65537, 131082, 0, 65537, 131083, 0, 65537, 131084, 0, 65537, 131085, 0, 65537, 131086, 0, 65537, 131087, 0, 65537, 131088, 0, 65537, 131089, 0, 65537, 131090, 0, 65537, 131091, 0, 65537, 131092, 0, 65537, 131093, 0, 65537, 131094, 0, 65537, 131095, 0, 65537, 131096, 0, 65537, 131097, 0, 65537, 131098, 0, 65538, 196608, 0, 65536, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 65537, 196619, 0, 65537, 196620, 0, 65537, 196621, 0, 65537, 196622, 0, 65537, 196623, 0, 65537, 196624, 0, 65537, 196625, 0, 65537, 196626, 0, 65537, 196627, 0, 65537, 196628, 0, 65537, 196629, 0, 65537, 196630, 0, 65537, 196631, 0, 65537, 196632, 0, 65537, 196633, 0, 65537, 196634, 0, 65538, 262144, 0, 65536, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 65537, 262154, 0, 65537, 262155, 0, 65537, 262156, 0, 65537, 262157, 0, 65537, 262158, 0, 65537, 262159, 0, 65537, 262160, 0, 65537, 262161, 0, 131073, 262162, 0, 131073, 262163, 0, 131073, 262164, 0, 131073, 262165, 0, 131073, 262166, 0, 131073, 262167, 0, 131073, 262168, 0, 131073, 262169, 0, 131073, 262170, 0, 131074, 327680, 0, 65536, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65537, 327688, 0, 65537, 327689, 0, 65537, 327690, 0, 65537, 327691, 0, 65537, 327692, 0, 65537, 327693, 0, 65537, 327694, 0, 65537, 327695, 0, 65537, 327696, 0, 131074, 393216, 0, 65536, 393217, 0, 65537, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65537, 393221, 0, 65537, 393222, 0, 65537, 393223, 0, 65537, 393224, 0, 65537, 393225, 0, 65537, 393226, 0, 65537, 393227, 0, 65537, 393228, 0, 131073, 393229, 0, 131073, 393230, 0, 131073, 393231, 0, 131074, 458752, 0, 65536, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 65537, 458763, 0, 131074, 524288, 0, 65536, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131074, 589824, 0, 65536, 589825, 0, 65537, 589826, 0, 65538, 655360, 0, 65536, 655361, 0, 65537, 655362, 0, 65538, 655378, 0, 0, 655379, 0, 2, 720896, 0, 65536, 720897, 0, 65537, 720898, 0, 65538, 720913, 0, 0, 720914, 0, 65537, 720915, 0, 65537, 720916, 0, 2, 786432, 0, 65536, 786433, 0, 65537, 786434, 0, 65538, 786447, 0, 0, 786448, 0, 1, 786449, 0, 65537, 786450, 0, 65537, 786451, 0, 65537, 786452, 0, 65537, 786453, 0, 2, 851968, 0, 65536, 851969, 0, 65537, 851970, 0, 65538, 851980, 0, 0, 851981, 0, 1, 851982, 0, 1, 851983, 0, 65537, 851984, 0, 65537, 851985, 0, 65537, 851986, 0, 65537, 851987, 0, 65537, 851988, 0, 65537, 851989, 0, 65537, 851990, 0, 1, 851991, 0, 1, 851992, 0, 1, 851993, 0, 2, 917504, 0, 65536, 917505, 0, 65537, 917506, 0, 65537, 917507, 0, 1, 917508, 0, 1, 917509, 0, 1, 917510, 0, 1, 917511, 0, 1, 917512, 0, 1, 917513, 0, 1, 917514, 0, 1, 917515, 0, 1, 917516, 0, 65537, 917517, 0, 65537, 917518, 0, 65537, 917519, 0, 65537, 917520, 0, 65537, 917521, 0, 65537, 917522, 0, 65537, 917523, 0, 65537, 917524, 0, 65537, 917525, 0, 65537, 917526, 0, 65537, 917527, 0, 65537, 917528, 0, 65537, 917529, 0, 65538, 983040, 0, 131072, 983041, 0, 131073, 983042, 0, 131073, 983043, 0, 131073, 983044, 0, 131073, 983045, 0, 131073, 983046, 0, 131073, 983047, 0, 131073, 983048, 0, 131073, 983049, 0, 131073, 983050, 0, 131073, 983051, 0, 131073, 983052, 0, 131073, 983053, 0, 131073, 983054, 0, 131073, 983055, 0, 131073, 983056, 0, 131073, 983057, 0, 131073, 983058, 0, 131073, 983059, 0, 131073, 983060, 0, 131073, 983061, 0, 131073, 983062, 0, 131073, 983063, 0, 131073, 983064, 0, 131073, 983065, 0, 131074 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enable = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 165, 190 )
+texture = ExtResource( 7 )
+
+[editable path="Viewport/player"]
+
+[editable path="vp_n/player_n"]

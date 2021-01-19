@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode unshaded;
+render_mode cull_disabled;
+render_mode world_vertex_coords;
+varying vec3 mod_norm;
+
+void vertex(){
+
+	mod_norm = NORMAL;
+
+}
+void fragment() {
+    ALBEDO = mod_norm.xyz/2.0f + 0.5f;
+}"
+
+[resource]
+shader = SubResource( 1 )
