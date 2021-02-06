@@ -1,0 +1,70 @@
+# This file will be configured to contain variables for CPack. These variables
+# should be set in the CMake list file of the project before CPack module is
+# included. The list of available CPACK_xxx variables and their associated
+# documentation may be obtained using
+#  cpack --help-variable-list
+#
+# Some variables are common to all generators (e.g. CPACK_PACKAGE_NAME)
+# and some are specific to a generator
+# (e.g. CPACK_NSIS_EXTRA_INSTALL_COMMANDS). The generator specific variables
+# usually begin with CPACK_<GENNAME>_xxxx.
+
+
+set(CPACK_BINARY_7Z "OFF")
+set(CPACK_BINARY_IFW "OFF")
+set(CPACK_BINARY_NSIS "ON")
+set(CPACK_BINARY_NUGET "OFF")
+set(CPACK_BINARY_WIX "OFF")
+set(CPACK_BINARY_ZIP "OFF")
+set(CPACK_BUILD_SOURCE_DIRS "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server;E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build")
+set(CPACK_CMAKE_GENERATOR "MinGW Makefiles")
+set(CPACK_COMPONENTS_ALL "")
+set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
+set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "C:/Program Files/CMake/share/cmake-3.17/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "server built using CMake")
+set(CPACK_GENERATOR "NSIS")
+set(CPACK_INSTALL_CMAKE_PROJECTS "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build;server;ALL;/")
+set(CPACK_INSTALL_PREFIX "C:/Program Files (x86)/server")
+set(CPACK_MODULE_PATH "E:/conandat/nlohmann_json/3.9.1/_/_/package/d1091b2ed420e6d287293709a907ae824d5de508/;E:/.conan/72294b/1/;E:/.conan/a4c6e9/1/;E:/.conan/3122a5/1/;E:/.conan/1c3dd5/1/;E:/.conan/7d7150/1/;E:/.conan/1ef32fb/1/;E:/.conan/8662c57/1/;E:/.conan/f047315/1/;E:/.conan/067e381/1/;E:/.conan/b8e1576/1/;E:/.conan/e06cadf/1/;E:/.conan/9596e38/1/;E:/.conan/e63fa9b/1/;E:/.conan/60793cf/1/;E:/.conan/b01bc7c/1/;E:/.conan/8258a37/1/;E:/.conan/7853615/1/;E:/.conan/67a82ba/1/;E:/.conan/e02978c/1/;E:/conandat/bzip2/1.0.6/conan/stable/package/902cf97d981bcaf24774c1d6ed80fb1f236f19c9/;E:/conandat/zlib/1.2.11/conan/stable/package/2e90c2fe2f69846019f521f2004427fb191035af/;E:/conandat/lzma/5.2.4/bincrafters/stable/package/ec4c1cbc30838d198ed1c241c3f6e6850af84ed6/lib/pkgconfig;E:/conandat/zstd/1.3.5/bincrafters/stable/package/2e90c2fe2f69846019f521f2004427fb191035af/;E:/.conan/c7f2453/1/;E:/.conan/6a5beba/1/;E:/.conan/773b95e/1/;E:/.conan/d374dee/1/;E:/.conan/da402af/1/;E:/.conan/10948a1/1/;E:/.conan/5eaf7ca/1/;E:/.conan/28e0f9e/1/;E:/.conan/1171598/1/;E:/.conan/0a1f5d2/1/;E:/.conan/7922b02/1/;E:/.conan/efd29d7/1/;E:/.conan/1259b1c/1/;E:/.conan/c63493d/1/;E:/.conan/b3b0a9b/1/;E:/.conan/24f8727/1/;E:/.conan/25b158b/1/;E:/.conan/8960efb/1/;E:/.conan/362763a/1/;E:/.conan/da412bd/1/;E:/.conan/3c6f692/1/;E:/.conan/227d21d/1/;E:/.conan/d031c69/1/;E:/.conan/38f1cc0/1/;E:/.conan/00cf55f/1/;E:/.conan/451f37d/1/;E:/.conan/45c4ae8/1/;E:/.conan/7604d71/1/;E:/.conan/8493c68/1/;E:/.conan/37e88c1/1/;E:/.conan/981a5fe/1/;E:/.conan/91025a0/1/;E:/.conan/d05791e/1/;E:/.conan/1187c4f/1/;E:/.conan/d8c0a14/1/;E:/.conan/5e063b5/1/;E:/.conan/3cb9c23/1/;E:/.conan/9d56c1e/1/;E:/.conan/ebb1446/1/;E:/.conan/bb7fa4d/1/;E:/.conan/5a50b90/1/;E:/.conan/c6972f2/1/;E:/.conan/489bfe6/1/;E:/.conan/40d9f5f/1/")
+set(CPACK_NSIS_DISPLAY_NAME "server 0.1.0")
+set(CPACK_NSIS_INSTALLER_ICON_CODE "")
+set(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "")
+set(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES64")
+set(CPACK_NSIS_PACKAGE_NAME "server 0.1.0")
+set(CPACK_NSIS_UNINSTALL_NAME "Uninstall")
+set(CPACK_OUTPUT_CONFIG_FILE "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build/CPackConfig.cmake")
+set(CPACK_PACKAGE_DEFAULT_LOCATION "/")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "C:/Program Files/CMake/share/cmake-3.17/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "server built using CMake")
+set(CPACK_PACKAGE_FILE_NAME "server-0.1.0-win64")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "server 0.1.0")
+set(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "server 0.1.0")
+set(CPACK_PACKAGE_NAME "server")
+set(CPACK_PACKAGE_RELOCATABLE "true")
+set(CPACK_PACKAGE_VENDOR "Humanity")
+set(CPACK_PACKAGE_VERSION "0.1.0")
+set(CPACK_PACKAGE_VERSION_MAJOR "0")
+set(CPACK_PACKAGE_VERSION_MINOR "1")
+set(CPACK_PACKAGE_VERSION_PATCH "0")
+set(CPACK_PROJECT_NAME "server")
+set(CPACK_PROJECT_VERSION "0.1.0")
+set(CPACK_RESOURCE_FILE_LICENSE "C:/Program Files/CMake/share/cmake-3.17/Templates/CPack.GenericLicense.txt")
+set(CPACK_RESOURCE_FILE_README "C:/Program Files/CMake/share/cmake-3.17/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "C:/Program Files/CMake/share/cmake-3.17/Templates/CPack.GenericWelcome.txt")
+set(CPACK_SET_DESTDIR "OFF")
+set(CPACK_SOURCE_7Z "ON")
+set(CPACK_SOURCE_GENERATOR "7Z;ZIP")
+set(CPACK_SOURCE_OUTPUT_CONFIG_FILE "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build/CPackSourceConfig.cmake")
+set(CPACK_SOURCE_ZIP "ON")
+set(CPACK_SYSTEM_NAME "win64")
+set(CPACK_TOPLEVEL_TAG "win64")
+set(CPACK_WIX_SIZEOF_VOID_P "8")
+
+if(NOT CPACK_PROPERTIES_FILE)
+  set(CPACK_PROPERTIES_FILE "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build/CPackProperties.cmake")
+endif()
+
+if(EXISTS ${CPACK_PROPERTIES_FILE})
+  include(${CPACK_PROPERTIES_FILE})
+endif()

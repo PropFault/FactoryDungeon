@@ -1,0 +1,1325 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "path": "conanfile.txt", 
+    "requires": [
+     "1", 
+     "2"
+    ], 
+    "options": "nlohmann_json:implicit_conversions=True\nnlohmann_json:multiple_headers=False", 
+    "context": "host"
+   }, 
+   "1": {
+    "package_id": "d1091b2ed420e6d287293709a907ae824d5de508", 
+    "prev": "0", 
+    "ref": "nlohmann_json/3.9.1", 
+    "options": "implicit_conversions=True\nmultiple_headers=False", 
+    "context": "host"
+   }, 
+   "2": {
+    "context": "host", 
+    "ref": "boost_asio/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "3", 
+     "4", 
+     "9", 
+     "10", 
+     "5", 
+     "6", 
+     "25", 
+     "68", 
+     "36", 
+     "44", 
+     "28", 
+     "22", 
+     "8", 
+     "16", 
+     "17"
+    ], 
+    "options": "boost_atomic:shared=False\nboost_chrono:shared=False\nboost_container:shared=False\nboost_context:shared=False\nboost_coroutine:shared=False\nboost_cycle_group_b:shared=False\nboost_cycle_group_c:shared=False\nboost_cycle_group_c:threadapi=default\nboost_cycle_group_c:use_bzip2=True\nboost_cycle_group_c:use_lzma=True\nboost_cycle_group_c:use_zlib=True\nboost_cycle_group_c:use_zstd=True\nboost_exception:shared=False\nboost_filesystem:shared=False\nboost_locale:shared=False\nboost_locale:use_icu=False\nboost_regex:shared=False\nboost_regex:use_icu=False\nboost_system:shared=False\nboost_thread:shared=False\nboost_thread:threadapi=default\nbzip2:build_executable=True\nbzip2:shared=False\nlzma:fPIC=True\nlzma:shared=False\nzlib:minizip=False\nzlib:shared=False\nzstd:shared=False"
+   }, 
+   "3": {
+    "context": "host", 
+    "ref": "boost_array/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "7", 
+     "8"
+    ], 
+    "options": ""
+   }, 
+   "4": {
+    "context": "host", 
+    "ref": "boost_assert/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5"
+    ], 
+    "options": ""
+   }, 
+   "5": {
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "context": "host", 
+    "prev": "0", 
+    "ref": "boost_config/1.69.0@bincrafters/stable", 
+    "options": ""
+   }, 
+   "6": {
+    "context": "host", 
+    "ref": "boost_core/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5"
+    ], 
+    "options": ""
+   }, 
+   "7": {
+    "context": "host", 
+    "ref": "boost_static_assert/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5"
+    ], 
+    "options": ""
+   }, 
+   "8": {
+    "context": "host", 
+    "ref": "boost_throw_exception/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5"
+    ], 
+    "options": ""
+   }, 
+   "9": {
+    "context": "host", 
+    "ref": "boost_bind/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6"
+    ], 
+    "options": ""
+   }, 
+   "10": {
+    "context": "host", 
+    "ref": "boost_chrono/1.69.0@bincrafters/stable", 
+    "package_id": "7bcb9ac430e698003ab07e6855b498ebdad98ae6", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "11", 
+     "12", 
+     "13", 
+     "14", 
+     "20", 
+     "7", 
+     "22", 
+     "8", 
+     "16", 
+     "24", 
+     "17", 
+     "23"
+    ], 
+    "options": "shared=False\nboost_system:shared=False"
+   }, 
+   "11": {
+    "context": "host", 
+    "ref": "boost_integer/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "7"
+    ], 
+    "options": ""
+   }, 
+   "12": {
+    "context": "host", 
+    "ref": "boost_move/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "7"
+    ], 
+    "options": ""
+   }, 
+   "13": {
+    "context": "host", 
+    "ref": "boost_mpl/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "14", 
+     "15", 
+     "7", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "14": {
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "context": "host", 
+    "prev": "0", 
+    "ref": "boost_predef/1.69.0@bincrafters/stable", 
+    "options": ""
+   }, 
+   "15": {
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "context": "host", 
+    "prev": "0", 
+    "ref": "boost_preprocessor/1.69.0@bincrafters/stable", 
+    "options": ""
+   }, 
+   "16": {
+    "context": "host", 
+    "ref": "boost_type_traits/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "7"
+    ], 
+    "options": ""
+   }, 
+   "17": {
+    "context": "host", 
+    "ref": "boost_utility/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "18", 
+     "6", 
+     "15", 
+     "7", 
+     "8", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "18": {
+    "context": "host", 
+    "ref": "boost_container_hash/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "19", 
+     "11", 
+     "7", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "19": {
+    "context": "host", 
+    "ref": "boost_detail/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "15", 
+     "7", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "20": {
+    "context": "host", 
+    "ref": "boost_ratio/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "11", 
+     "13", 
+     "21", 
+     "7", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "21": {
+    "context": "host", 
+    "ref": "boost_rational/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "11", 
+     "7", 
+     "8", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "22": {
+    "context": "host", 
+    "ref": "boost_system/1.69.0@bincrafters/stable", 
+    "package_id": "f651989c8ea50a65a641b43e1d4235e8d7ac28f2", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "23"
+    ], 
+    "options": "shared=False"
+   }, 
+   "23": {
+    "context": "host", 
+    "ref": "boost_winapi/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "14"
+    ], 
+    "options": ""
+   }, 
+   "24": {
+    "context": "host", 
+    "ref": "boost_typeof/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "15", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "25": {
+    "context": "host", 
+    "requires": [
+     "4", 
+     "5", 
+     "26", 
+     "6", 
+     "34", 
+     "12", 
+     "53", 
+     "22", 
+     "29", 
+     "8", 
+     "16", 
+     "17"
+    ], 
+    "modified": true, 
+    "build_requires": [
+     "73"
+    ], 
+    "package_id": "6f57595458be54ace63183978d6a2c365734a4a1", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "ref": "boost_coroutine/1.69.0@bincrafters/stable", 
+    "options": "shared=False\nboost_context:shared=False\nboost_exception:shared=False\nboost_system:shared=False\nboost_thread:shared=False\nboost_thread:threadapi=default"
+   }, 
+   "26": {
+    "context": "host", 
+    "requires": [
+     "4", 
+     "5", 
+     "27", 
+     "14", 
+     "28", 
+     "29"
+    ], 
+    "modified": true, 
+    "build_requires": [
+     "71"
+    ], 
+    "package_id": "0c5cb684b3575c1c0deeaf5913b0f2e3db6ca51b", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "ref": "boost_context/1.69.0@bincrafters/stable", 
+    "options": "shared=False\nboost_thread:shared=False\nboost_thread:threadapi=default"
+   }, 
+   "27": {
+    "context": "host", 
+    "ref": "boost_pool/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "11", 
+     "8", 
+     "16", 
+     "23"
+    ], 
+    "options": ""
+   }, 
+   "28": {
+    "context": "host", 
+    "ref": "boost_smart_ptr/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "12", 
+     "14", 
+     "7", 
+     "8", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "29": {
+    "context": "host", 
+    "ref": "boost_thread/1.69.0@bincrafters/stable", 
+    "package_id": "3475bd55b91ae904ac96fde0f106a136ab951a5e", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "30"
+    ], 
+    "options": "shared=False\nthreadapi=default\nboost_atomic:shared=False\nboost_chrono:shared=False\nboost_container:shared=False\nboost_cycle_group_b:shared=False\nboost_cycle_group_c:shared=False\nboost_cycle_group_c:threadapi=default\nboost_cycle_group_c:use_bzip2=True\nboost_cycle_group_c:use_lzma=True\nboost_cycle_group_c:use_zlib=True\nboost_cycle_group_c:use_zstd=True\nboost_exception:shared=False\nboost_filesystem:shared=False\nboost_locale:shared=False\nboost_locale:use_icu=False\nboost_regex:shared=False\nboost_regex:use_icu=False\nboost_system:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\nlzma:fPIC=True\nlzma:shared=False\nzlib:minizip=False\nzlib:shared=False\nzstd:shared=False"
+   }, 
+   "30": {
+    "context": "host", 
+    "ref": "boost_cycle_group_c/1.69.0@bincrafters/stable", 
+    "package_id": "e452dce77fc2f310c53f8de0c0033e3007b40aa2", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "31", 
+     "3", 
+     "4", 
+     "48", 
+     "9", 
+     "10", 
+     "33", 
+     "5", 
+     "46", 
+     "18", 
+     "6", 
+     "19", 
+     "49", 
+     "34", 
+     "50", 
+     "52", 
+     "36", 
+     "40", 
+     "41", 
+     "11", 
+     "47", 
+     "51", 
+     "38", 
+     "54", 
+     "57", 
+     "58", 
+     "12", 
+     "13", 
+     "43", 
+     "42", 
+     "59", 
+     "27", 
+     "14", 
+     "15", 
+     "60", 
+     "53", 
+     "21", 
+     "44", 
+     "28", 
+     "7", 
+     "22", 
+     "8", 
+     "61", 
+     "62", 
+     "35", 
+     "16", 
+     "24", 
+     "45", 
+     "17", 
+     "63", 
+     "23", 
+     "64", 
+     "65", 
+     "66", 
+     "67"
+    ], 
+    "options": "shared=False\nthreadapi=default\nuse_bzip2=True\nuse_lzma=True\nuse_zlib=True\nuse_zstd=True\nboost_atomic:shared=False\nboost_chrono:shared=False\nboost_container:shared=False\nboost_cycle_group_b:shared=False\nboost_exception:shared=False\nboost_filesystem:shared=False\nboost_locale:shared=False\nboost_locale:use_icu=False\nboost_regex:shared=False\nboost_regex:use_icu=False\nboost_system:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\nlzma:fPIC=True\nlzma:shared=False\nzlib:minizip=False\nzlib:shared=False\nzstd:shared=False"
+   }, 
+   "31": {
+    "context": "host", 
+    "ref": "boost_algorithm/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "32"
+    ], 
+    "options": "boost_cycle_group_a:shared=False\nboost_exception:shared=False\nboost_regex:shared=False\nboost_regex:use_icu=False"
+   }, 
+   "32": {
+    "context": "host", 
+    "ref": "boost_cycle_group_a/1.69.0@bincrafters/stable", 
+    "package_id": "9b93ebf6eac1d69ea8a05fac89cebc7115ff9faa", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "3", 
+     "4", 
+     "9", 
+     "33", 
+     "5", 
+     "18", 
+     "6", 
+     "19", 
+     "34", 
+     "36", 
+     "38", 
+     "13", 
+     "43", 
+     "42", 
+     "15", 
+     "44", 
+     "7", 
+     "8", 
+     "35", 
+     "16", 
+     "45", 
+     "17"
+    ], 
+    "options": "shared=False\nboost_exception:shared=False\nboost_regex:shared=False\nboost_regex:use_icu=False"
+   }, 
+   "33": {
+    "context": "host", 
+    "ref": "boost_concept_check/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "15", 
+     "7", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "34": {
+    "context": "host", 
+    "ref": "boost_exception/1.69.0@bincrafters/stable", 
+    "package_id": "a9b10ee52a1571771c8b819b8d473dbe2447402c", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "28", 
+     "8", 
+     "35", 
+     "16"
+    ], 
+    "options": "shared=False"
+   }, 
+   "35": {
+    "context": "host", 
+    "ref": "boost_tuple/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "7", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "36": {
+    "context": "host", 
+    "ref": "boost_function/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "9", 
+     "5", 
+     "6", 
+     "11", 
+     "15", 
+     "8", 
+     "37", 
+     "16", 
+     "24"
+    ], 
+    "options": ""
+   }, 
+   "37": {
+    "context": "host", 
+    "ref": "boost_type_index/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "18", 
+     "6", 
+     "15", 
+     "28", 
+     "7", 
+     "8", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "38": {
+    "context": "host", 
+    "ref": "boost_iterator/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "33", 
+     "5", 
+     "39", 
+     "6", 
+     "19", 
+     "40", 
+     "41", 
+     "13", 
+     "42", 
+     "28", 
+     "7", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "39": {
+    "context": "host", 
+    "ref": "boost_conversion/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "28", 
+     "8", 
+     "16", 
+     "24"
+    ], 
+    "options": ""
+   }, 
+   "40": {
+    "context": "host", 
+    "ref": "boost_function_types/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "19", 
+     "13", 
+     "15", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "41": {
+    "context": "host", 
+    "ref": "boost_fusion/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "18", 
+     "6", 
+     "40", 
+     "13", 
+     "15", 
+     "7", 
+     "35", 
+     "16", 
+     "24", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "42": {
+    "context": "host", 
+    "ref": "boost_optional/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "19", 
+     "12", 
+     "14", 
+     "7", 
+     "8", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "43": {
+    "context": "host", 
+    "ref": "boost_numeric_conversion/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "39", 
+     "6", 
+     "13", 
+     "15", 
+     "8", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "44": {
+    "context": "host", 
+    "ref": "boost_regex/1.69.0@bincrafters/stable", 
+    "package_id": "18247bd093b68877c2596025597fbb3298a56546", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "33", 
+     "5", 
+     "18", 
+     "6", 
+     "11", 
+     "38", 
+     "13", 
+     "14", 
+     "28", 
+     "7", 
+     "8", 
+     "16"
+    ], 
+    "options": "shared=False\nuse_icu=False"
+   }, 
+   "45": {
+    "context": "host", 
+    "ref": "boost_unordered/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "46", 
+     "18", 
+     "6", 
+     "19", 
+     "12", 
+     "14", 
+     "15", 
+     "28", 
+     "8", 
+     "35", 
+     "16"
+    ], 
+    "options": "boost_container:shared=False"
+   }, 
+   "46": {
+    "context": "host", 
+    "ref": "boost_container/1.69.0@bincrafters/stable", 
+    "package_id": "9b4429925c3f7007258e609c9d2d335c25b9aa4d", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "18", 
+     "6", 
+     "47", 
+     "12", 
+     "7", 
+     "16"
+    ], 
+    "options": "shared=False"
+   }, 
+   "47": {
+    "context": "host", 
+    "ref": "boost_intrusive/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "18", 
+     "6", 
+     "12", 
+     "7"
+    ], 
+    "options": ""
+   }, 
+   "48": {
+    "context": "host", 
+    "ref": "boost_atomic/1.69.0@bincrafters/stable", 
+    "package_id": "1a126aab433e35aa4ab9dd2a1411f8d4a838fdf8", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "16"
+    ], 
+    "options": "shared=False"
+   }, 
+   "49": {
+    "context": "host", 
+    "ref": "boost_endian/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "6", 
+     "14", 
+     "7", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "50": {
+    "context": "host", 
+    "ref": "boost_filesystem/1.69.0@bincrafters/stable", 
+    "package_id": "766a720436ea0fa093515e0f9bed72aea413125b", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "18", 
+     "6", 
+     "19", 
+     "51", 
+     "38", 
+     "28", 
+     "7", 
+     "22", 
+     "16"
+    ], 
+    "options": "shared=False\nboost_system:shared=False"
+   }, 
+   "51": {
+    "context": "host", 
+    "ref": "boost_io/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5"
+    ], 
+    "options": ""
+   }, 
+   "52": {
+    "context": "host", 
+    "ref": "boost_foreach/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "38", 
+     "13", 
+     "53", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "53": {
+    "context": "host", 
+    "ref": "boost_range/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "32"
+    ], 
+    "options": "boost_cycle_group_a:shared=False\nboost_exception:shared=False\nboost_regex:shared=False\nboost_regex:use_icu=False"
+   }, 
+   "54": {
+    "context": "host", 
+    "ref": "boost_lexical_cast/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "55"
+    ], 
+    "options": "boost_atomic:shared=False\nboost_container:shared=False\nboost_cycle_group_b:shared=False"
+   }, 
+   "55": {
+    "context": "host", 
+    "ref": "boost_cycle_group_b/1.69.0@bincrafters/stable", 
+    "package_id": "e786a748f5a8da34c9f7b56ecec073e9f74ad10f", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "3", 
+     "4", 
+     "48", 
+     "33", 
+     "5", 
+     "46", 
+     "6", 
+     "19", 
+     "41", 
+     "11", 
+     "56", 
+     "13", 
+     "43", 
+     "14", 
+     "53", 
+     "28", 
+     "7", 
+     "8", 
+     "35", 
+     "16"
+    ], 
+    "options": "shared=False\nboost_atomic:shared=False\nboost_container:shared=False"
+   }, 
+   "56": {
+    "context": "host", 
+    "ref": "boost_lambda/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "9", 
+     "5", 
+     "6", 
+     "19", 
+     "38", 
+     "13", 
+     "15", 
+     "35", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "57": {
+    "context": "host", 
+    "ref": "boost_locale/1.69.0@bincrafters/stable", 
+    "package_id": "2a9ba546110d266be26b9846bd35d8c7f90a039d", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "36", 
+     "38", 
+     "28", 
+     "7", 
+     "22", 
+     "16"
+    ], 
+    "options": "shared=False\nuse_icu=False\nboost_system:shared=False"
+   }, 
+   "58": {
+    "context": "host", 
+    "ref": "boost_math/1.69.0@bincrafters/stable", 
+    "package_id": "3b96eb029063585e0e69bed2dbf9fae22c9c3ee1", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "55"
+    ], 
+    "options": "boost_atomic:shared=False\nboost_container:shared=False\nboost_cycle_group_b:shared=False"
+   }, 
+   "59": {
+    "context": "host", 
+    "ref": "boost_phoenix/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "9", 
+     "5", 
+     "6", 
+     "36", 
+     "41", 
+     "13", 
+     "14", 
+     "15", 
+     "60", 
+     "53", 
+     "28", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "60": {
+    "context": "host", 
+    "ref": "boost_proto/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "6", 
+     "41", 
+     "13", 
+     "15", 
+     "53", 
+     "7", 
+     "16", 
+     "24", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "61": {
+    "context": "host", 
+    "ref": "boost_tokenizer/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "5", 
+     "38", 
+     "13", 
+     "8", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "62": {
+    "context": "host", 
+    "ref": "boost_tti/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "5", 
+     "40", 
+     "13", 
+     "15", 
+     "16"
+    ], 
+    "options": ""
+   }, 
+   "63": {
+    "context": "host", 
+    "ref": "boost_variant/1.69.0@bincrafters/stable", 
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "requires": [
+     "4", 
+     "9", 
+     "5", 
+     "18", 
+     "6", 
+     "19", 
+     "11", 
+     "12", 
+     "13", 
+     "15", 
+     "7", 
+     "8", 
+     "37", 
+     "16", 
+     "17"
+    ], 
+    "options": ""
+   }, 
+   "64": {
+    "package_id": "902cf97d981bcaf24774c1d6ed80fb1f236f19c9", 
+    "prev": "0", 
+    "ref": "bzip2/1.0.6@conan/stable", 
+    "options": "build_executable=True\nshared=False", 
+    "context": "host"
+   }, 
+   "65": {
+    "package_id": "2e90c2fe2f69846019f521f2004427fb191035af", 
+    "prev": "0", 
+    "ref": "zlib/1.2.11@conan/stable", 
+    "options": "minizip=False\nshared=False", 
+    "context": "host"
+   }, 
+   "66": {
+    "package_id": "ec4c1cbc30838d198ed1c241c3f6e6850af84ed6", 
+    "prev": "0", 
+    "ref": "lzma/5.2.4@bincrafters/stable", 
+    "options": "fPIC=True\nshared=False", 
+    "context": "host"
+   }, 
+   "67": {
+    "package_id": "2e90c2fe2f69846019f521f2004427fb191035af", 
+    "prev": "0", 
+    "ref": "zstd/1.3.5@bincrafters/stable", 
+    "options": "shared=False", 
+    "context": "host"
+   }, 
+   "68": {
+    "context": "host", 
+    "requires": [
+     "30"
+    ], 
+    "modified": true, 
+    "build_requires": [
+     "69"
+    ], 
+    "package_id": "84fae77119058618bbeb2a2e627bb5d8e785b25e", 
+    "python_requires": [
+     "boost_base/1.69.0@bincrafters/stable"
+    ], 
+    "prev": "0", 
+    "ref": "boost_date_time/1.69.0@bincrafters/stable", 
+    "options": "boost_atomic:shared=False\nboost_chrono:shared=False\nboost_container:shared=False\nboost_cycle_group_b:shared=False\nboost_cycle_group_c:shared=False\nboost_cycle_group_c:threadapi=default\nboost_cycle_group_c:use_bzip2=True\nboost_cycle_group_c:use_lzma=True\nboost_cycle_group_c:use_zlib=True\nboost_cycle_group_c:use_zstd=True\nboost_exception:shared=False\nboost_filesystem:shared=False\nboost_locale:shared=False\nboost_locale:use_icu=False\nboost_regex:shared=False\nboost_regex:use_icu=False\nboost_system:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\nlzma:fPIC=True\nlzma:shared=False\nzlib:minizip=False\nzlib:shared=False\nzstd:shared=False"
+   }, 
+   "69": {
+    "ref": "boost_generator/1.69.0@bincrafters/stable", 
+    "package_id": "6ec6439c54a97da1cfddff786d1ea15988300369", 
+    "context": "host", 
+    "prev": "0", 
+    "requires": [
+     "70"
+    ], 
+    "options": ""
+   }, 
+   "70": {
+    "package_id": "456f15897172eef340fcbac8a70811f2beb26a93", 
+    "prev": "0", 
+    "ref": "boost_build/1.69.0@bincrafters/stable", 
+    "options": "", 
+    "context": "host"
+   }, 
+   "71": {
+    "ref": "boost_generator/1.69.0@bincrafters/stable", 
+    "package_id": "6ec6439c54a97da1cfddff786d1ea15988300369", 
+    "context": "host", 
+    "prev": "0", 
+    "requires": [
+     "72"
+    ], 
+    "options": ""
+   }, 
+   "72": {
+    "package_id": "456f15897172eef340fcbac8a70811f2beb26a93", 
+    "prev": "0", 
+    "ref": "boost_build/1.69.0@bincrafters/stable", 
+    "options": "", 
+    "context": "host"
+   }, 
+   "73": {
+    "ref": "boost_generator/1.69.0@bincrafters/stable", 
+    "package_id": "6ec6439c54a97da1cfddff786d1ea15988300369", 
+    "context": "host", 
+    "prev": "0", 
+    "requires": [
+     "74"
+    ], 
+    "options": ""
+   }, 
+   "74": {
+    "package_id": "456f15897172eef340fcbac8a70811f2beb26a93", 
+    "prev": "0", 
+    "ref": "boost_build/1.69.0@bincrafters/stable", 
+    "options": "", 
+    "context": "host"
+   }
+  }, 
+  "revisions_enabled": false
+ }, 
+ "version": "0.4", 
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Debug\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=8\nos=Windows\nos_build=Windows\n[options]\n[build_requires]\n[env]\n"
+}

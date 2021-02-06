@@ -9,12 +9,54 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Action",
+"language": "GDScript",
+"path": "res://Action.gd"
+}, {
+"base": "Node",
+"class": "MPAction",
+"language": "GDScript",
+"path": "res://MPAction.gd"
+}, {
+"base": "Node",
+"class": "Parent2Dto3D",
+"language": "GDScript",
+"path": "res://Parent2Dto3D.gd"
+}, {
+"base": "PipelineComponent",
+"class": "Pipe",
+"language": "GDScript",
+"path": "res://Pipe.gd"
+}, {
+"base": "PipelineComponent",
+"class": "PipeSocket",
+"language": "GDScript",
+"path": "res://PipeSocket.gd"
+}, {
+"base": "Node2D",
+"class": "PipelineComponent",
+"language": "GDScript",
+"path": "res://PipelineComponent.gd"
+}, {
+"base": "Tween",
+"class": "RayCast2DPositioner",
+"language": "GDScript",
+"path": "res://RayCast2DPositioner.gd"
+}, {
 "base": "Node",
 "class": "TransformLinker",
 "language": "GDScript",
 "path": "res://transformLinker.gd"
 } ]
 _global_script_class_icons={
+"Action": "",
+"MPAction": "",
+"Parent2Dto3D": "",
+"Pipe": "",
+"PipeSocket": "",
+"PipelineComponent": "",
+"RayCast2DPositioner": "res://interface/human_ik.png",
 "TransformLinker": "res://interface/transform_link.png"
 }
 
@@ -23,6 +65,10 @@ _global_script_class_icons={
 config/name="MetroidvaniaDungeon"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+MpClient="*res://MPClient.gd"
 
 [input]
 

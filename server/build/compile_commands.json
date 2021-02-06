@@ -1,0 +1,7 @@
+[
+{
+  "directory": "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/build",
+  "command": "E:\\Qt\\Tools\\mingw810_64\\bin\\x86_64-w64-mingw32-g++.exe   @CMakeFiles/server.dir/includes_CXX.rsp    -g    -DLZMA_API_STATIC -DBOOST_IOSTREAMS_USE_BZIP2=1 -DBOOST_IOSTREAMS_USE_ZLIB=1 -DBOOST_IOSTREAMS_USE_LZMA=1 -DBOOST_IOSTREAMS_USE_ZSTD=1 -DBOOST_ALL_NO_LIB=1 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -o CMakeFiles\\server.dir\\main.cpp.obj -c E:\\Users\\MoustacheSpy\\Documents\\MEGA\\gamedev\\dungeonSandbox\\server\\main.cpp",
+  "file": "E:/Users/MoustacheSpy/Documents/MEGA/gamedev/dungeonSandbox/server/main.cpp"
+}
+]

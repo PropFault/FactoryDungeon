@@ -1,0 +1,10 @@
+[generators]
+cmake
+
+[requires]
+nlohmann_json/3.9.1
+boost_asio/1.69.0@bincrafters/stable
+
+[options]
+
+[imports]

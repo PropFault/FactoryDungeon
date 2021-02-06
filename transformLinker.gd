@@ -8,7 +8,7 @@ export (Dictionary) var linkingPaths;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	for sourceP in linkingPaths.keys():
 		var targetP = linkingPaths[sourceP];
 		var source = get_node(sourceP);

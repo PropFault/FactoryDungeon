@@ -1,0 +1,18 @@
+{
+ "root": {
+  "version": null, 
+  "name": null, 
+  "channel": null, 
+  "user": null
+ }, 
+ "options": [
+  [
+   "nlohmann_json:implicit_conversions", 
+   "True"
+  ], 
+  [
+   "nlohmann_json:multiple_headers", 
+   "False"
+  ]
+ ]
+}
