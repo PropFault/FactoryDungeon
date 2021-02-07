@@ -15,6 +15,16 @@ _global_script_classes=[ {
 "path": "res://Action.gd"
 }, {
 "base": "Node",
+"class": "LiquidConvertible",
+"language": "GDScript",
+"path": "res://LiquidConvertible.gd"
+}, {
+"base": "Resource",
+"class": "LiquidType",
+"language": "GDScript",
+"path": "res://LiquidType.gd"
+}, {
+"base": "Node",
 "class": "MPAction",
 "language": "GDScript",
 "path": "res://MPAction.gd"
@@ -51,6 +61,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Action": "",
+"LiquidConvertible": "",
+"LiquidType": "",
 "MPAction": "",
 "Parent2Dto3D": "",
 "Pipe": "",

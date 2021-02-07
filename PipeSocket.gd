@@ -20,7 +20,12 @@ func setNext(newNext):
 		next.global_position = self.global_position;
 		next.onComponentAttached(self);
 	
-	
+func _process(delta):
+	if(next != null):
+		#next.remove_child(self);
+		#self.add_child(next);
+		next.global_position = self.global_position;
+		next.onComponentAttached(self);
 func getNext():
 	if(next == null):
 		return null;

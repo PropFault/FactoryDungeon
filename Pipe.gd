@@ -3,22 +3,47 @@ class_name Pipe
 
 export(NodePath)var _socket;
 export(Font)var font;
-export(float)var volume;
 export(float)var maxVolume = 100.0;
 export(float)var fillPercent;
-export(float)var volumeMass = 1.0;
+var volumeMass = 1.0;
 var pumpingForce = 0.0
 onready var forwardVec = Vector2()
 onready var backwardVec = Vector2()
 onready var socket = get_node(_socket);
+var fluids:Dictionary;
+var fluidTypes:Dictionary;
+var volume:float setget _setVolume, getVolume;
 
+func _setVolume(var volume):
+	pass
 
+func getVolume():
+	var sum = 0;
+	for type in fluids:
+		sum += fluids[type];
+	return sum;
+func transferFluids(var pipe, var totalVolume):
+	if(fluids.size() <=0):
+		return;
+	var fluidPerPart = totalVolume/fluids.size();
+	var sizeLeft = fluids.size();
+	for type in fluids:
+		if fluids[type] >0:
+			fluids[type] -= fluidPerPart;
+			if !pipe.fluids.has(type):
+				pipe.fluids[type] = 0;
+			pipe.fluids[type] += fluidPerPart;
+			sizeLeft -=1;
+			if fluids[type] < 0:
+				pipe.fluids[type] -= -fluids[type];
+				transferFluids(pipe, -fluids[type]);
 
 func _physics_process(delta):
 	self.fillPercent = (self.volume/maxVolume) * 100.0;
 	var localFWD = transform.x;
 	forwardVec = (clamp(pumpingForce/volumeMass,0,self.volume) * localFWD).clamped(self.volume);
 	backwardVec = Vector2();
+
 	if(pumpingForce < 0.01):
 
 
@@ -42,16 +67,20 @@ func _physics_process(delta):
 		else:
 			forwardVec += pf*localFWD;
 			backwardVec += pf*localFWD;
-	var fowardVolume = clamp(forwardVec.length(),0,self.volume);
+	var forwardVolume = clamp(forwardVec.length(),0,self.volume);
 	var backwardVolume = clamp(backwardVec.length(),0,self.volume);
 	if(self.socket.next !=null):
-		if not (self.socket.next.volume + fowardVolume) > self.socket.next.maxVolume:
-			self.socket.next.volume += fowardVolume;
-			self.volume -= fowardVolume;
+		if(self.socket.next.isPipe()):
+			if not (self.socket.next.volume + forwardVolume) > self.socket.next.maxVolume:
+				#self.socket.next.volume += fowardVolume;
+				#self.volume -= fowardVolume;
+				transferFluids(self.socket.next, forwardVolume);
 	if(self.connectedSocket!=null and self.connectedSocket.socketOwner != null):
-		if not (self.connectedSocket.socketOwner.volume + fowardVolume) > self.connectedSocket.socketOwner.maxVolume:
-			self.connectedSocket.socketOwner.volume += backwardVolume;
-			self.volume -= backwardVolume;
+		if(self.connectedSocket.socketOwner.isPipe()):
+			if not (self.connectedSocket.socketOwner.volume + backwardVolume) > self.connectedSocket.socketOwner.maxVolume:
+				#self.connectedSocket.socketOwner.volume += backwardVolume;
+				#self.volume -= backwardVolume;
+				transferFluids(self.connectedSocket.socketOwner, backwardVolume);
 	update()
 func _draw():
 	draw_string(font, Vector2(0,20),str(self.volume));

@@ -18,6 +18,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(socket.next == null):
+		return;
 	if(Input.is_key_pressed(KEY_SHIFT)):
 		enabled = !enabled;
 	var n = socket.next;
