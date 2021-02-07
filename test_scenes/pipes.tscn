@@ -1,327 +1,25 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Pipe.gd" type="Script" id=1]
-[ext_resource path="res://assets/atlas/pipes.tres" type="Texture" id=2]
+[ext_resource path="res://assets/entities/Pipe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PipeSocket.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/liquid.png" type="Texture" id=4]
-[ext_resource path="res://test_scenes/pipe_fill_effect.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/Roboto-Black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://test_scenes/pipewatersum.gd" type="Script" id=7]
-[ext_resource path="res://test_scenes/endpoint.gd" type="Script" id=8]
-[ext_resource path="res://assets/sprites/end.png" type="Texture" id=9]
-[ext_resource path="res://test_scenes/WaterPump.gd" type="Script" id=10]
-[ext_resource path="res://assets/sprites/pump.png" type="Texture" id=11]
+[ext_resource path="res://test_scenes/dejuicer.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/dejuicer.png" type="Texture" id=9]
+[ext_resource path="res://assets/entities/Rock.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/sprites/juicer.png" type="Texture" id=12]
 [ext_resource path="res://test_scenes/Juicer.gd" type="Script" id=13]
-[ext_resource path="res://LiquidConvertible.gd" type="Script" id=14]
-[ext_resource path="res://tilemap.png" type="Texture" id=15]
-
-[sub_resource type="DynamicFont" id=1]
-size = 10
-font_data = ExtResource( 6 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 4 )
-region = Rect2( 80, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 4 )
-region = Rect2( 112, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 4 )
-region = Rect2( 144, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 4 )
-region = Rect2( 160, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
-region = Rect2( 176, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
-region = Rect2( 192, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
-region = Rect2( 208, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
-region = Rect2( 224, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=17]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 12.0
-} ]
-
-[sub_resource type="DynamicFont" id=18]
-size = 10
-font_data = ExtResource( 6 )
-
-[sub_resource type="Curve" id=19]
-_data = [ Vector2( 0, 0.403409 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=20]
-curve = SubResource( 19 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-flag_disable_z = true
-direction = Vector3( -5.382, 0, 0 )
-spread = 0.0
-gravity = Vector3( 0, 12.837, 0 )
-initial_velocity = 45.23
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 7.0
-scale_random = 1.0
-scale_curve = SubResource( 20 )
-color = Color( 0.478431, 0.639216, 0, 1 )
 
 [sub_resource type="DynamicFont" id=22]
 font_data = ExtResource( 6 )
 
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 7.9615, 8.34386 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 15 )
-region = Rect2( 48, 32, 16, 16 )
-
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 18.5962, 5.78796 )
+extents = Vector2( 18.5962, 12.6815 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 24.1939, 22.2555 )
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Pipe3" type="Node2D" parent="."]
-position = Vector2( -11.0523, -0.0338631 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 1 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe3"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe3"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../../Pipe4")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe3"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 13
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Pipe4" type="Node2D" parent="."]
-position = Vector2( 32.317, -11.4919 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 18 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe4"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe4"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../../Pipe5")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe4"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 5
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Pipe5" type="Node2D" parent="."]
-position = Vector2( 52.8076, -0.355671 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 18 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe5"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe5"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../../Pipe6")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe5"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 4
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Pipe6" type="Node2D" parent="."]
-position = Vector2( 80.0888, 13.6822 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 18 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe6"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe6"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../../Pipe7")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe6"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 4
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Pipe7" type="Node2D" parent="."]
-position = Vector2( 96.5888, -6.06778 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 18 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe7"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe7"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../../Pipe8")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe7"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 3
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Pipe8" type="Node2D" parent="."]
-position = Vector2( 96.5888, -6.06778 )
-script = ExtResource( 1 )
-_socket = NodePath("Socket")
-font = SubResource( 18 )
-maxVolume = 10.0
-fillPercent = 50.005
-
-[node name="Sprite" type="Sprite" parent="Pipe8"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 2 )
-
-[node name="Socket" type="Node2D" parent="Pipe8"]
-position = Vector2( 15.938, 0 )
-script = ExtResource( 3 )
-_next = NodePath("../Node2D2")
-_socketOwner = NodePath("..")
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pipe8"]
-position = Vector2( 8, 0 )
-scale = Vector2( 1, 0.262 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 3
-playing = true
-script = ExtResource( 5 )
-_pipe = NodePath("..")
-
-[node name="Node2D2" type="Node2D" parent="Pipe8"]
-position = Vector2( -7.59801, -0.422607 )
-rotation = 3.36675
-script = ExtResource( 8 )
-_particles = NodePath("Particles2D")
-
-[node name="Particles2D" type="Particles2D" parent="Pipe8/Node2D2"]
-amount = 9990
-lifetime = 24.41
-randomness = 0.13
-local_coords = false
-process_material = SubResource( 21 )
-
-[node name="Sprite" type="Sprite" parent="Pipe8/Node2D2"]
-rotation = 2.85868
-texture = ExtResource( 9 )
-
-[node name="Pump" type="Sprite" parent="."]
-position = Vector2( 37.8949, 28.554 )
-texture = ExtResource( 11 )
-script = ExtResource( 10 )
-_socket = NodePath("PipeSocket")
-pumpForce = 0.6
-
-[node name="PipeSocket" type="Node2D" parent="Pump"]
-position = Vector2( 15.6083, 8.1758 )
-script = ExtResource( 3 )
-_socketOwner = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 43.6595, -3.3371 )
@@ -330,62 +28,110 @@ zoom = Vector2( 0.2, 0.2 )
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 7 )
-_rootSocket = NodePath("../Pipe3/Socket")
+_rootSocket = NodePath("../Juicer/SocketA")
 font = SubResource( 22 )
 
-[node name="Rock" type="RigidBody2D" parent="."]
-position = Vector2( -19.8673, -41.8508 )
-script = ExtResource( 14 )
+[node name="Rock" parent="." instance=ExtResource( 10 )]
+position = Vector2( 16.4094, -91.0338 )
+
+[node name="Rock2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 16.7379, -56.4695 )
+
+[node name="dejuicer" type="Sprite" parent="."]
+position = Vector2( 122.264, 0 )
+texture = ExtResource( 9 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
-_root = NodePath("../Rock")
-_sprite = NodePath("../Rock/Rock")
-volumeProduced = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
-shape = SubResource( 23 )
+[node name="PipeSocket" type="Node2D" parent="dejuicer"]
+position = Vector2( -31, 0 )
+script = ExtResource( 3 )
+_socketOwner = NodePath("..")
 
-[node name="Rock" type="Sprite" parent="Rock"]
-texture = SubResource( 24 )
-
-[node name="Rock2" type="RigidBody2D" parent="."]
-position = Vector2( -16.245, -71.3015 )
-script = ExtResource( 14 )
+[node name="dejuicer2" type="Sprite" parent="."]
+position = Vector2( 122.264, 0 )
+texture = ExtResource( 9 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
-_root = NodePath("../Rock")
-_sprite = NodePath("../Rock/Rock")
-volumeProduced = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2"]
-shape = SubResource( 23 )
-
-[node name="Rock" type="Sprite" parent="Rock2"]
-texture = SubResource( 24 )
+[node name="PipeSocket" type="Node2D" parent="dejuicer2"]
+position = Vector2( -31, 0 )
+script = ExtResource( 3 )
+_socketOwner = NodePath("..")
 
 [node name="Juicer" type="Sprite" parent="."]
-position = Vector2( -16.9853, -1.61807 )
+position = Vector2( 16.539, -3.43052 )
 texture = ExtResource( 12 )
 script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
 _socketA = NodePath("SocketA")
 _socketB = NodePath("SocketB")
 
 [node name="SocketA" type="Node2D" parent="Juicer"]
 position = Vector2( 32.1215, 8.01644 )
 script = ExtResource( 3 )
-_next = NodePath("../../Pipe3")
+_next = NodePath("../../Pipe/Back")
 _socketOwner = NodePath("..")
 
 [node name="SocketB" type="Node2D" parent="Juicer"]
 position = Vector2( -31.6357, 8.09862 )
 script = ExtResource( 3 )
+_next = NodePath("../../Pipe2/Front")
 _socketOwner = NodePath("..")
 
 [node name="Area2D" type="Area2D" parent="Juicer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Juicer/Area2D"]
-position = Vector2( 0.235962, -20.7653 )
+position = Vector2( 0.127155, -2.70642 )
 shape = SubResource( 25 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Juicer"]
+position = Vector2( -0.420929, -0.140312 )
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Juicer/StaticBody2D"]
+polygon = PoolVector2Array( -18.1457, -24.9929, -10.1998, -15.1929, -6.75652, -15.4578, -16.2917, -26.7146 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Juicer/StaticBody2D"]
+polygon = PoolVector2Array( 15.8895, -26.1848, 18.6706, -25.92, 16.5517, -22.2119, 9.4003, -14.928, 7.0165, -15.3253 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Juicer/StaticBody2D"]
+position = Vector2( 0.834274, 8.67646 )
+shape = SubResource( 26 )
+
+[node name="Pipe" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63.5553, -42.4985 )
+
+[node name="Front" parent="Pipe" index="1"]
+_next = NodePath("../../dejuicer/PipeSocket")
+
+[node name="AnimatedSprite" parent="Pipe" index="2"]
+frame = 13
+
+[node name="Pipe2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 75.8052, -30.9169 )
+
+[node name="Front" parent="Pipe2" index="1"]
+_next = NodePath("../../dejuicer2/PipeSocket")
+
+[node name="AnimatedSprite" parent="Pipe2" index="2"]
+frame = 13
+
+[node name="Pipe3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63.5553, -13.9898 )
+
+[node name="AnimatedSprite" parent="Pipe3" index="2"]
+frame = 2
 [connection signal="body_entered" from="Juicer/Area2D" to="Juicer" method="_bodyInGrinder"]
+
+[editable path="Pipe"]
+
+[editable path="Pipe2"]
+
+[editable path="Pipe3"]

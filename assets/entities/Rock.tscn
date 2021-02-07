@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tilemap.png" type="Texture" id=1]
+[ext_resource path="res://LiquidConvertible.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.9615, 8.34386 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 32, 16, 16 )
+
+[node name="Rock" type="RigidBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+_root = NodePath(".")
+_sprite = NodePath("Rock")
+volumeProduced = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Rock" type="Sprite" parent="."]
+texture = SubResource( 2 )

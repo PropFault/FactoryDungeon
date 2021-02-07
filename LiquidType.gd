@@ -4,12 +4,14 @@ var solidPacked:PackedScene;
 var color:Color;
 var fluidProduced;
 var typeString;
+var parent;
 
 func _init(var solidRoot,var solidSprite, var ts, var fluidProduced):
 	self.typeString = ts;
 	self.fluidProduced = fluidProduced;
+	parent = solidRoot.get_parent();
 	self.solidPacked = PackedScene.new();
-	self.solidPacked.pack(solidRoot.get_tree().get_current_scene());
+	self.solidPacked.pack(solidRoot);
 	yield(solidSprite.texture, "changed")
 	var image = solidSprite.texture.get_data();
 	var avgR = 0.0;
